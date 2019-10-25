@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A1903A32363159B00CA9712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903A22363159B00CA9712 /* AppDelegate.swift */; };
+		8A1903A52363159B00CA9712 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903A42363159B00CA9712 /* SceneDelegate.swift */; };
+		8A1903A72363159B00CA9712 /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903A62363159B00CA9712 /* ListUsersViewController.swift */; };
+		8A1903AC2363159B00CA9712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1903AB2363159B00CA9712 /* Assets.xcassets */; };
+		8A1903AF2363159B00CA9712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1903AD2363159B00CA9712 /* LaunchScreen.storyboard */; };
+		8A1903B723631D6800CA9712 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903B623631D6800CA9712 /* Then.swift */; };
+		8A1903B923631DD000CA9712 /* AirLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903B823631DD000CA9712 /* AirLayout.swift */; };
+		8A1903BC23632B8C00CA9712 /* CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903BB23632B8C00CA9712 /* CAGradientLayer.swift */; };
+		8A1903C12363305300CA9712 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A1903C02363304000CA9712 /* Localizable.strings */; };
+		8A1903C52363307E00CA9712 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903C42363307E00CA9712 /* Assets.swift */; };
+		8A1903C72363308A00CA9712 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903C62363308A00CA9712 /* Strings.swift */; };
+		8A1903CB2363407C00CA9712 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903CA2363407C00CA9712 /* UITableView.swift */; };
+		8A1903D42363570300CA9712 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903D32363570300CA9712 /* Typealiases.swift */; };
+		FF495872B542FE23B00CEC8C /* Pods_Frogogo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAC5C01C734802044A11358 /* Pods_Frogogo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30AB4016A0F55806BEDF82CF /* Pods-Frogogo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frogogo.debug.xcconfig"; path = "Target Support Files/Pods-Frogogo/Pods-Frogogo.debug.xcconfig"; sourceTree = "<group>"; };
+		4AAC5C01C734802044A11358 /* Pods_Frogogo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frogogo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A19039F2363159B00CA9712 /* Frogogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frogogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1903A22363159B00CA9712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8A1903A42363159B00CA9712 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8A1903A62363159B00CA9712 /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
+		8A1903AB2363159B00CA9712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A1903AE2363159B00CA9712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8A1903B02363159B00CA9712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A1903B623631D6800CA9712 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		8A1903B823631DD000CA9712 /* AirLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirLayout.swift; sourceTree = "<group>"; };
+		8A1903BB23632B8C00CA9712 /* CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayer.swift; sourceTree = "<group>"; };
+		8A1903C02363304000CA9712 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		8A1903C42363307E00CA9712 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		8A1903C62363308A00CA9712 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		8A1903CA2363407C00CA9712 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		8A1903D32363570300CA9712 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		B4F302B8B7A11422F2B7D951 /* Pods-Frogogo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frogogo.release.xcconfig"; path = "Target Support Files/Pods-Frogogo/Pods-Frogogo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A19039C2363159B00CA9712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF495872B542FE23B00CEC8C /* Pods_Frogogo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34C6FED689FB7DBDFE218425 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AAC5C01C734802044A11358 /* Pods_Frogogo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A1903962363159B00CA9712 = {
+			isa = PBXGroup;
+			children = (
+				8A1903A12363159B00CA9712 /* Frogogo */,
+				8A1903A02363159B00CA9712 /* Products */,
+				AF9FFFD8EDD6B0AA21C4DE80 /* Pods */,
+				34C6FED689FB7DBDFE218425 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8A1903A02363159B00CA9712 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A19039F2363159B00CA9712 /* Frogogo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A1903A12363159B00CA9712 /* Frogogo */ = {
+			isa = PBXGroup;
+			children = (
+				8A1903A22363159B00CA9712 /* AppDelegate.swift */,
+				8A1903A42363159B00CA9712 /* SceneDelegate.swift */,
+				8A1903C22363306300CA9712 /* Logic */,
+				8A1903D0236356BB00CA9712 /* Modules */,
+				8A1903BA23632B7900CA9712 /* Extensions */,
+				8A1903BF2363300A00CA9712 /* Resources */,
+				8A1903B02363159B00CA9712 /* Info.plist */,
+			);
+			path = Frogogo;
+			sourceTree = "<group>";
+		};
+		8A1903BA23632B7900CA9712 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8A1903B623631D6800CA9712 /* Then.swift */,
+				8A1903B823631DD000CA9712 /* AirLayout.swift */,
+				8A1903CA2363407C00CA9712 /* UITableView.swift */,
+				8A1903BB23632B8C00CA9712 /* CAGradientLayer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8A1903BF2363300A00CA9712 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A1903AB2363159B00CA9712 /* Assets.xcassets */,
+				8A1903C02363304000CA9712 /* Localizable.strings */,
+				8A1903AD2363159B00CA9712 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8A1903C22363306300CA9712 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				8A1903C32363306600CA9712 /* Generated */,
+				8A1903D2236356F700CA9712 /* General */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		8A1903C32363306600CA9712 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				8A1903C42363307E00CA9712 /* Assets.swift */,
+				8A1903C62363308A00CA9712 /* Strings.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		8A1903D0236356BB00CA9712 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8A1903D1236356D300CA9712 /* ListUsers */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8A1903D1236356D300CA9712 /* ListUsers */ = {
+			isa = PBXGroup;
+			children = (
+				8A1903A62363159B00CA9712 /* ListUsersViewController.swift */,
+				8A1903D52363574300CA9712 /* Cells */,
+			);
+			path = ListUsers;
+			sourceTree = "<group>";
+		};
+		8A1903D2236356F700CA9712 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				8A1903D32363570300CA9712 /* Typealiases.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		8A1903D52363574300CA9712 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AF9FFFD8EDD6B0AA21C4DE80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30AB4016A0F55806BEDF82CF /* Pods-Frogogo.debug.xcconfig */,
+				B4F302B8B7A11422F2B7D951 /* Pods-Frogogo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A19039E2363159B00CA9712 /* Frogogo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A1903B32363159B00CA9712 /* Build configuration list for PBXNativeTarget "Frogogo" */;
+			buildPhases = (
+				8A1903BD23632D4F00CA9712 /* SwiftLint */,
+				8A1903BE23632F9500CA9712 /* SwiftGen */,
+				D35088F3F8D9624428D849C6 /* [CP] Check Pods Manifest.lock */,
+				8A19039B2363159B00CA9712 /* Sources */,
+				8A19039C2363159B00CA9712 /* Frameworks */,
+				8A19039D2363159B00CA9712 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Frogogo;
+			productName = Frogogo;
+			productReference = 8A19039F2363159B00CA9712 /* Frogogo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A1903972363159B00CA9712 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Andrey Dovzhenko";
+				TargetAttributes = {
+					8A19039E2363159B00CA9712 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 8A19039A2363159B00CA9712 /* Build configuration list for PBXProject "Frogogo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A1903962363159B00CA9712;
+			productRefGroup = 8A1903A02363159B00CA9712 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A19039E2363159B00CA9712 /* Frogogo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A19039D2363159B00CA9712 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A1903AF2363159B00CA9712 /* LaunchScreen.storyboard in Resources */,
+				8A1903C12363305300CA9712 /* Localizable.strings in Resources */,
+				8A1903AC2363159B00CA9712 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A1903BD23632D4F00CA9712 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		8A1903BE23632F9500CA9712 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
+		D35088F3F8D9624428D849C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Frogogo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A19039B2363159B00CA9712 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A1903B923631DD000CA9712 /* AirLayout.swift in Sources */,
+				8A1903C52363307E00CA9712 /* Assets.swift in Sources */,
+				8A1903D42363570300CA9712 /* Typealiases.swift in Sources */,
+				8A1903C72363308A00CA9712 /* Strings.swift in Sources */,
+				8A1903B723631D6800CA9712 /* Then.swift in Sources */,
+				8A1903A72363159B00CA9712 /* ListUsersViewController.swift in Sources */,
+				8A1903CB2363407C00CA9712 /* UITableView.swift in Sources */,
+				8A1903BC23632B8C00CA9712 /* CAGradientLayer.swift in Sources */,
+				8A1903A32363159B00CA9712 /* AppDelegate.swift in Sources */,
+				8A1903A52363159B00CA9712 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8A1903AD2363159B00CA9712 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A1903AE2363159B00CA9712 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A1903B12363159B00CA9712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A1903B22363159B00CA9712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A1903B42363159B00CA9712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30AB4016A0F55806BEDF82CF /* Pods-Frogogo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Frogogo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Andrey-Dovzhenko.Frogogo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A1903B52363159B00CA9712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4F302B8B7A11422F2B7D951 /* Pods-Frogogo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Frogogo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Andrey-Dovzhenko.Frogogo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A19039A2363159B00CA9712 /* Build configuration list for PBXProject "Frogogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A1903B12363159B00CA9712 /* Debug */,
+				8A1903B22363159B00CA9712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A1903B32363159B00CA9712 /* Build configuration list for PBXNativeTarget "Frogogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A1903B42363159B00CA9712 /* Debug */,
+				8A1903B52363159B00CA9712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A1903972363159B00CA9712 /* Project object */;
+}
