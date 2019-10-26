@@ -8,24 +8,107 @@
 
 import UIKit
 
-final class ListUsersViewController: UIViewController {
+final class ListUsersViewController: ParentViewController {
 
-    private let gradientLayer = CAGradientLayer().then {
-        let colors = [Asset.orange.color.cgColor, Asset.purple.color.cgColor]
-        $0.setupGradient(start: .topRight, end: .bottomLeft, colors: colors)
+    private enum Constants {
+        static let headerHeight: CGFloat = 150
+        static let cellHeight: CGFloat = 85
+        static let bottomGradientViewHeight: CGFloat = 100
+     }
+
+    override var navigationBarHidesShadow: Bool {
+        return true
+    }
+
+    private let headerImageView = UIImageView().thenUI {
+        $0.backgroundColor = .clear
+        $0.isUserInteractionEnabled = false
+        $0.image = Asset.header.image
+    }
+
+    private let bottomGradientView = UIView().then {
+        $0.backgroundColor = .clear
+        $0.isUserInteractionEnabled = false
+    }
+
+    private let bottomGradientLayer = CAGradientLayer().then {
+        let colors = [Asset.blackOpacity.color.cgColor, Asset.darkGreenOpacity.color.cgColor]
+        $0.setupGradient(start: .topCenter, end: .bottomCenter, colors: colors)
+    }
+
+    private let tableView = UITableView(frame: .zero, style: .plain).thenUI {
+        $0.backgroundColor = .clear
+        $0.separatorStyle = .none
+        $0.rowHeight = Constants.cellHeight
+        $0.register(UserTableViewCell.self)
+    }
+
+    private let addButton = CircleButton(color: Asset.darkGreen.color).thenUI {
+        $0.setImage(image: Asset.add.image)
+        $0.layer.setupShadow(radius: 5, opacity: 0.2, height: 3)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureGradient()
+        view.backgroundColor = Asset.white.color
+        title = Localized.ListUsers.title
+        configureHeaderImageView()
+        configureTableView()
+        configureAddButton()
+        configureBottomGradientView()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        gradientLayer.frame = view.frame
+        bottomGradientLayer.frame = bottomGradientView.frame
+        bottomGradientLayer.frame.origin.y = 0
     }
 
-    private func configureGradient() {
-        view.layer.addSublayer(gradientLayer)
+    private func configureBottomGradientView() {
+        view.addSubview(bottomGradientView)
+        bottomGradientView.withoutSafeArea {
+            $0.left().right().bottom().height(Constants.bottomGradientViewHeight)
+        }
+        bottomGradientView.layer.addSublayer(bottomGradientLayer)
+    }
+
+    private func configureHeaderImageView() {
+        view.addSubview(headerImageView)
+        headerImageView.withoutSafeArea {
+            $0.top().left().right().height(Constants.headerHeight)
+        }
+    }
+
+    private func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        view.addSubview(tableView)
+        tableView.withoutSafeArea {
+            $0.left().right().bottom()
+            $0.topAnchor ~ headerImageView.bottomAnchor
+        }
+    }
+
+    private func configureAddButton() {
+        view.addSubview(addButton)
+        addButton.right(30).bottom(30).height(50).aspectRatio()
+    }
+}
+
+extension ListUsersViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 12
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return (tableView.dequeueReusableCell(for: indexPath) as UserTableViewCell).then {
+            $0.configure()
+        }
+    }
+}
+
+extension ListUsersViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }

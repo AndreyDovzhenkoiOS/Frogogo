@@ -18,8 +18,22 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
-  internal static let orange = ColorAsset(name: "orange")
-  internal static let purple = ColorAsset(name: "purple")
+  internal static let green = ColorAsset(name: "Green")
+  internal static let blackOpacity = ColorAsset(name: "blackOpacity")
+  internal static let darkGreen = ColorAsset(name: "darkGreen")
+  internal static let darkGreenOpacity = ColorAsset(name: "darkGreenOpacity")
+  internal static let lightGreen = ColorAsset(name: "lightGreen")
+  internal static let lightPink = ColorAsset(name: "lightPink")
+  internal static let white = ColorAsset(name: "white")
+  internal static let emptyIcon1 = ImageAsset(name: "emptyIcon1")
+  internal static let emptyIcon2 = ImageAsset(name: "emptyIcon2")
+  internal static let emptyIcon3 = ImageAsset(name: "emptyIcon3")
+  internal static let emptyIcon4 = ImageAsset(name: "emptyIcon4")
+  internal static let emptyIcon5 = ImageAsset(name: "emptyIcon5")
+  internal static let emptyIcon6 = ImageAsset(name: "emptyIcon6")
+  internal static let add = ImageAsset(name: "add")
+  internal static let header = ImageAsset(name: "header")
+  internal static let logo = ImageAsset(name: "logo")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
