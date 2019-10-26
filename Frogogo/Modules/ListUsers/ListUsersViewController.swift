@@ -98,13 +98,18 @@ final class ListUsersViewController: ParentViewController {
 
     private func configurePullToRefresh() {
         tableView.addParticlePullToRefresh(color: Asset.lightGreen.color) { [weak self] in
-            
+            self?.tableView.reloadWithAnimationFadeInTop()
         }
     }
 
     private func configureAddButton() {
         view.addSubview(addButton)
         addButton.right(30).bottom(30).height(50).aspectRatio()
+
+        addButton.addAction(for: .touchUpInside) { [weak self] _ in
+            self?.addButton.pulsate()
+            self?.present(AddUserViewController(), animated: true, completion: nil)
+        }
     }
 }
 

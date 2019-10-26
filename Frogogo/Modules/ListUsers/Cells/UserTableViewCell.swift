@@ -24,21 +24,22 @@ final class UserTableViewCell: UITableViewCell {
 
     private let nameLabel = UILabel().thenUI {
         $0.textColor = Asset.darkGreen.color
-        $0.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        $0.font = UIFont.system(.bold, size: 15)
     }
 
     private let emailLabel = UILabel().thenUI {
         $0.textColor = Asset.darkGreen.color
-        $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        $0.font = UIFont.system(.regular, size: 12)
     }
 
     private let dateLabel = UILabel().thenUI {
         $0.textColor = Asset.darkGreen.color
-        $0.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        $0.font = UIFont.system(.bold, size: 10)
     }
 
     private let lineView = UIView().thenUI {
-        $0.backgroundColor = Asset.lightPink.color
+        $0.alpha = 0.5
+        $0.backgroundColor = Asset.lightPinkOpacity.color
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

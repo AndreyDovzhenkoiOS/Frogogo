@@ -20,12 +20,22 @@
 		8A1903C72363308A00CA9712 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903C62363308A00CA9712 /* Strings.swift */; };
 		8A1903CB2363407C00CA9712 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903CA2363407C00CA9712 /* UITableView.swift */; };
 		8A1903D42363570300CA9712 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903D32363570300CA9712 /* Typealiases.swift */; };
+		8A519F9D2364ED8500220264 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A519F9C2364ED8500220264 /* InputTextField.swift */; };
+		8A519F9F2364F91F00220264 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A519F9E2364F91F00220264 /* Optional.swift */; };
 		8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2B2363751300381528 /* ParentViewController.swift */; };
 		8A5EDB2E23637E4900381528 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2D23637E4900381528 /* UserTableViewCell.swift */; };
 		8A5EDB3023637E9E00381528 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2F23637E9E00381528 /* ReusableView.swift */; };
 		8AF896BD23646DCD00AEFA21 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896BC23646DCD00AEFA21 /* CircleButton.swift */; };
 		8AF896BF23646E9300AEFA21 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896BE23646E9300AEFA21 /* CALayer.swift */; };
 		8AF896C323647F9900AEFA21 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8AF896C223647F9900AEFA21 /* .swiftlint.yml */; };
+		8AF896C52364819B00AEFA21 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896C42364819B00AEFA21 /* UIFont.swift */; };
+		8AF896C72364824900AEFA21 /* ListUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896C62364824900AEFA21 /* ListUsersViewModel.swift */; };
+		8AF896C9236482C300AEFA21 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896C8236482C300AEFA21 /* UIView.swift */; };
+		8AF896CB2364874C00AEFA21 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896CA2364874C00AEFA21 /* UIControl.swift */; };
+		8AF896D32364950500AEFA21 /* ModalTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896D22364950500AEFA21 /* ModalTransitionDelegate.swift */; };
+		8AF896D52364956E00AEFA21 /* ModalTransitionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896D42364956E00AEFA21 /* ModalTransitionConfigurator.swift */; };
+		8AF896D72364968300AEFA21 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896D62364968300AEFA21 /* AddUserViewController.swift */; };
+		8AF896DA23649B5500AEFA21 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896D923649B5500AEFA21 /* FormTableViewCell.swift */; };
 		FF495872B542FE23B00CEC8C /* Pods_Frogogo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAC5C01C734802044A11358 /* Pods_Frogogo.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,12 +57,22 @@
 		8A1903C62363308A00CA9712 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		8A1903CA2363407C00CA9712 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		8A1903D32363570300CA9712 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		8A519F9C2364ED8500220264 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		8A519F9E2364F91F00220264 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		8A5EDB2B2363751300381528 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		8A5EDB2D23637E4900381528 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		8A5EDB2F23637E9E00381528 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		8AF896BC23646DCD00AEFA21 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		8AF896BE23646E9300AEFA21 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		8AF896C223647F9900AEFA21 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		8AF896C42364819B00AEFA21 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		8AF896C62364824900AEFA21 /* ListUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewModel.swift; sourceTree = "<group>"; };
+		8AF896C8236482C300AEFA21 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8AF896CA2364874C00AEFA21 /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
+		8AF896D22364950500AEFA21 /* ModalTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransitionDelegate.swift; sourceTree = "<group>"; };
+		8AF896D42364956E00AEFA21 /* ModalTransitionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransitionConfigurator.swift; sourceTree = "<group>"; };
+		8AF896D62364968300AEFA21 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		8AF896D923649B5500AEFA21 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		B4F302B8B7A11422F2B7D951 /* Pods-Frogogo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frogogo.release.xcconfig"; path = "Target Support Files/Pods-Frogogo/Pods-Frogogo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,8 +137,12 @@
 				8A5EDB2F23637E9E00381528 /* ReusableView.swift */,
 				8A1903CA2363407C00CA9712 /* UITableView.swift */,
 				8A1903BB23632B8C00CA9712 /* CAGradientLayer.swift */,
-				8AF896BB23646DBA00AEFA21 /* UIKit */,
 				8AF896BE23646E9300AEFA21 /* CALayer.swift */,
+				8AF896CA2364874C00AEFA21 /* UIControl.swift */,
+				8AF896C42364819B00AEFA21 /* UIFont.swift */,
+				8A519F9E2364F91F00220264 /* Optional.swift */,
+				8AF896C8236482C300AEFA21 /* UIView.swift */,
+				8AF896BB23646DBA00AEFA21 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +160,7 @@
 		8A1903C22363306300CA9712 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				8AF896D123648F2800AEFA21 /* Helpers */,
 				8A1903C32363306600CA9712 /* Generated */,
 				8A1903D2236356F700CA9712 /* General */,
 			);
@@ -155,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				8A1903D1236356D300CA9712 /* ListUsers */,
+				8AF896D823649B1500AEFA21 /* AddUser */,
 				8A5EDB2A236374FD00381528 /* Parents */,
 			);
 			path = Modules;
@@ -163,6 +189,7 @@
 		8A1903D1236356D300CA9712 /* ListUsers */ = {
 			isa = PBXGroup;
 			children = (
+				8AF896C62364824900AEFA21 /* ListUsersViewModel.swift */,
 				8A1903A62363159B00CA9712 /* ListUsersViewController.swift */,
 				8A1903D52363574300CA9712 /* Cells */,
 			);
@@ -197,8 +224,35 @@
 			isa = PBXGroup;
 			children = (
 				8AF896BC23646DCD00AEFA21 /* CircleButton.swift */,
+				8A519F9C2364ED8500220264 /* InputTextField.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		8AF896D123648F2800AEFA21 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8AF896D22364950500AEFA21 /* ModalTransitionDelegate.swift */,
+				8AF896D42364956E00AEFA21 /* ModalTransitionConfigurator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8AF896D823649B1500AEFA21 /* AddUser */ = {
+			isa = PBXGroup;
+			children = (
+				8AF896D62364968300AEFA21 /* AddUserViewController.swift */,
+				8AF896DB23649B5800AEFA21 /* Cells */,
+			);
+			path = AddUser;
+			sourceTree = "<group>";
+		};
+		8AF896DB23649B5800AEFA21 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8AF896D923649B5500AEFA21 /* FormTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		AF9FFFD8EDD6B0AA21C4DE80 /* Pods */ = {
@@ -371,19 +425,29 @@
 			files = (
 				8A1903B923631DD000CA9712 /* AirLayout.swift in Sources */,
 				8A1903C52363307E00CA9712 /* Assets.swift in Sources */,
+				8AF896CB2364874C00AEFA21 /* UIControl.swift in Sources */,
 				8A1903D42363570300CA9712 /* Typealiases.swift in Sources */,
 				8A1903C72363308A00CA9712 /* Strings.swift in Sources */,
 				8A5EDB2E23637E4900381528 /* UserTableViewCell.swift in Sources */,
 				8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */,
 				8A1903B723631D6800CA9712 /* Then.swift in Sources */,
+				8AF896D32364950500AEFA21 /* ModalTransitionDelegate.swift in Sources */,
 				8A5EDB3023637E9E00381528 /* ReusableView.swift in Sources */,
 				8A1903A72363159B00CA9712 /* ListUsersViewController.swift in Sources */,
+				8A519F9F2364F91F00220264 /* Optional.swift in Sources */,
+				8AF896D72364968300AEFA21 /* AddUserViewController.swift in Sources */,
+				8AF896DA23649B5500AEFA21 /* FormTableViewCell.swift in Sources */,
 				8AF896BF23646E9300AEFA21 /* CALayer.swift in Sources */,
 				8A1903CB2363407C00CA9712 /* UITableView.swift in Sources */,
 				8AF896BD23646DCD00AEFA21 /* CircleButton.swift in Sources */,
+				8A519F9D2364ED8500220264 /* InputTextField.swift in Sources */,
+				8AF896C52364819B00AEFA21 /* UIFont.swift in Sources */,
 				8A1903BC23632B8C00CA9712 /* CAGradientLayer.swift in Sources */,
 				8A1903A32363159B00CA9712 /* AppDelegate.swift in Sources */,
 				8A1903A52363159B00CA9712 /* SceneDelegate.swift in Sources */,
+				8AF896C9236482C300AEFA21 /* UIView.swift in Sources */,
+				8AF896C72364824900AEFA21 /* ListUsersViewModel.swift in Sources */,
+				8AF896D52364956E00AEFA21 /* ModalTransitionConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
