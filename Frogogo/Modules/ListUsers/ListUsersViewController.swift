@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ParticlePullToRefresh
 
 final class ListUsersViewController: ParentViewController {
 
@@ -48,12 +49,17 @@ final class ListUsersViewController: ParentViewController {
         $0.layer.setupShadow(radius: 5, opacity: 0.2, height: 3)
     }
 
+    deinit {
+      tableView.removeParticlePullToRefresh()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Asset.white.color
         title = Localized.ListUsers.title
         configureHeaderImageView()
         configureTableView()
+        configurePullToRefresh()
         configureAddButton()
         configureBottomGradientView()
     }
@@ -87,6 +93,12 @@ final class ListUsersViewController: ParentViewController {
         tableView.withoutSafeArea {
             $0.left().right().bottom()
             $0.topAnchor ~ headerImageView.bottomAnchor
+        }
+    }
+
+    private func configurePullToRefresh() {
+        tableView.addParticlePullToRefresh(color: Asset.lightGreen.color) { [weak self] in
+            
         }
     }
 

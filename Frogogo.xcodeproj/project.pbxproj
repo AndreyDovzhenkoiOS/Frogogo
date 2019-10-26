@@ -25,6 +25,7 @@
 		8A5EDB3023637E9E00381528 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2F23637E9E00381528 /* ReusableView.swift */; };
 		8AF896BD23646DCD00AEFA21 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896BC23646DCD00AEFA21 /* CircleButton.swift */; };
 		8AF896BF23646E9300AEFA21 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896BE23646E9300AEFA21 /* CALayer.swift */; };
+		8AF896C323647F9900AEFA21 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8AF896C223647F9900AEFA21 /* .swiftlint.yml */; };
 		FF495872B542FE23B00CEC8C /* Pods_Frogogo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAC5C01C734802044A11358 /* Pods_Frogogo.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		8A5EDB2F23637E9E00381528 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		8AF896BC23646DCD00AEFA21 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		8AF896BE23646E9300AEFA21 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		8AF896C223647F9900AEFA21 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B4F302B8B7A11422F2B7D951 /* Pods-Frogogo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frogogo.release.xcconfig"; path = "Target Support Files/Pods-Frogogo/Pods-Frogogo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 		8A1903962363159B00CA9712 = {
 			isa = PBXGroup;
 			children = (
+				8AF896C223647F9900AEFA21 /* .swiftlint.yml */,
 				8A1903A12363159B00CA9712 /* Frogogo */,
 				8A1903A02363159B00CA9712 /* Products */,
 				AF9FFFD8EDD6B0AA21C4DE80 /* Pods */,
@@ -214,12 +217,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A1903B32363159B00CA9712 /* Build configuration list for PBXNativeTarget "Frogogo" */;
 			buildPhases = (
+				D35088F3F8D9624428D849C6 /* [CP] Check Pods Manifest.lock */,
 				8A1903BD23632D4F00CA9712 /* SwiftLint */,
 				8A1903BE23632F9500CA9712 /* SwiftGen */,
-				D35088F3F8D9624428D849C6 /* [CP] Check Pods Manifest.lock */,
 				8A19039B2363159B00CA9712 /* Sources */,
 				8A19039C2363159B00CA9712 /* Frameworks */,
 				8A19039D2363159B00CA9712 /* Resources */,
+				B1D237056F2FC43E4F87B776 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF896C323647F9900AEFA21 /* .swiftlint.yml in Resources */,
 				8A1903AF2363159B00CA9712 /* LaunchScreen.storyboard in Resources */,
 				8A1903C12363305300CA9712 /* Localizable.strings in Resources */,
 				8A1903AC2363159B00CA9712 /* Assets.xcassets in Resources */,
@@ -312,6 +317,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
+		B1D237056F2FC43E4F87B776 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Frogogo/Pods-Frogogo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ParticlePullToRefresh/ParticlePullToRefresh.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParticlePullToRefresh.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Frogogo/Pods-Frogogo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		D35088F3F8D9624428D849C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
