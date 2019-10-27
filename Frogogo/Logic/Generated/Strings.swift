@@ -12,6 +12,25 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
+  internal enum FormUser {
+    internal enum Input {
+      /// Почта
+      internal static let email = L10n.tr("Localizable", "formUser.input.email")
+      /// Имя
+      internal static let firstName = L10n.tr("Localizable", "formUser.input.firstName")
+      /// Фамилия
+      internal static let lastName = L10n.tr("Localizable", "formUser.input.lastName")
+      /// Аватар url
+      internal static let urlAvatar = L10n.tr("Localizable", "formUser.input.urlAvatar")
+    }
+    internal enum Title {
+      /// Добавить
+      internal static let add = L10n.tr("Localizable", "formUser.title.add")
+      /// Редактировать
+      internal static let edit = L10n.tr("Localizable", "formUser.title.edit")
+    }
+  }
+
   internal enum ListUsers {
     /// Пользователи
     internal static let title = L10n.tr("Localizable", "listUsers.title")

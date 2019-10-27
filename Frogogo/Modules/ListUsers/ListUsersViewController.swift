@@ -11,7 +11,7 @@ import UIKit
 final class ListUsersViewController: ParentViewController {
 
     private enum Constants {
-        static let headerHeight: CGFloat = 150
+        static let headerHeight: CGFloat = 180
         static let cellHeight: CGFloat = 85
         static let bottomGradientViewHeight: CGFloat = 100
      }
@@ -107,7 +107,9 @@ final class ListUsersViewController: ParentViewController {
 
         addButton.addAction(for: .touchUpInside) { [weak self] _ in
             self?.addButton.pulsate()
-            self?.present(AddUserViewController(), animated: true, completion: nil)
+            self?.present(FormUserViewController(viewModel: FormUserViewModel()),
+                          animated: true,
+                          completion: nil)
         }
     }
 }

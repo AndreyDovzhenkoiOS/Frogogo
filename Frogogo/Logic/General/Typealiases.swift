@@ -11,3 +11,4 @@ import Foundation
 typealias Localized = L10n
 typealias VoidCallback = () -> Void
 typealias Callback<T> = (T) -> Void
+typealias FormCallback<T, B> = (T, B) -> Void

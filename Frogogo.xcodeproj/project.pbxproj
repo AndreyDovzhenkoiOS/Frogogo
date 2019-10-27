@@ -25,9 +25,13 @@
 		8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2B2363751300381528 /* ParentViewController.swift */; };
 		8A5EDB2E23637E4900381528 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2D23637E4900381528 /* UserTableViewCell.swift */; };
 		8A5EDB3023637E9E00381528 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2F23637E9E00381528 /* ReusableView.swift */; };
+		8A634DA023659C99001D8082 /* FormUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634D9F23659C99001D8082 /* FormUserViewModel.swift */; };
+		8A634DA323659D20001D8082 /* InputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634DA223659D20001D8082 /* InputModel.swift */; };
+		8A634DA52365A26D001D8082 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634DA42365A26D001D8082 /* FormModel.swift */; };
 		8ADEE3BC2365674F00FDCAB3 /* UIScrollView+ParticlePullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADEE3B92365674E00FDCAB3 /* UIScrollView+ParticlePullToRefresh.swift */; };
 		8ADEE3BD2365674F00FDCAB3 /* ParticlePullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADEE3BA2365674E00FDCAB3 /* ParticlePullToRefresh.swift */; };
 		8ADEE3BE2365674F00FDCAB3 /* UIImage+Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADEE3BB2365674F00FDCAB3 /* UIImage+Particle.swift */; };
+		8ADEE3C3236579D100FDCAB3 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADEE3C2236579D100FDCAB3 /* NotificationCenter.swift */; };
 		8AF896BD23646DCD00AEFA21 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896BC23646DCD00AEFA21 /* CircleButton.swift */; };
 		8AF896BF23646E9300AEFA21 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896BE23646E9300AEFA21 /* CALayer.swift */; };
 		8AF896C323647F9900AEFA21 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8AF896C223647F9900AEFA21 /* .swiftlint.yml */; };
@@ -37,7 +41,7 @@
 		8AF896CB2364874C00AEFA21 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896CA2364874C00AEFA21 /* UIControl.swift */; };
 		8AF896D32364950500AEFA21 /* ModalTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896D22364950500AEFA21 /* ModalTransitionDelegate.swift */; };
 		8AF896D52364956E00AEFA21 /* ModalTransitionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896D42364956E00AEFA21 /* ModalTransitionConfigurator.swift */; };
-		8AF896D72364968300AEFA21 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896D62364968300AEFA21 /* AddUserViewController.swift */; };
+		8AF896D72364968300AEFA21 /* FormUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896D62364968300AEFA21 /* FormUserViewController.swift */; };
 		8AF896DA23649B5500AEFA21 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF896D923649B5500AEFA21 /* FormTableViewCell.swift */; };
 		FF495872B542FE23B00CEC8C /* Pods_Frogogo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAC5C01C734802044A11358 /* Pods_Frogogo.framework */; };
 /* End PBXBuildFile section */
@@ -65,9 +69,13 @@
 		8A5EDB2B2363751300381528 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		8A5EDB2D23637E4900381528 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		8A5EDB2F23637E9E00381528 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		8A634D9F23659C99001D8082 /* FormUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUserViewModel.swift; sourceTree = "<group>"; };
+		8A634DA223659D20001D8082 /* InputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModel.swift; sourceTree = "<group>"; };
+		8A634DA42365A26D001D8082 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		8ADEE3B92365674E00FDCAB3 /* UIScrollView+ParticlePullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ParticlePullToRefresh.swift"; sourceTree = "<group>"; };
 		8ADEE3BA2365674E00FDCAB3 /* ParticlePullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticlePullToRefresh.swift; sourceTree = "<group>"; };
 		8ADEE3BB2365674F00FDCAB3 /* UIImage+Particle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Particle.swift"; sourceTree = "<group>"; };
+		8ADEE3C2236579D100FDCAB3 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		8AF896BC23646DCD00AEFA21 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		8AF896BE23646E9300AEFA21 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		8AF896C223647F9900AEFA21 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -77,7 +85,7 @@
 		8AF896CA2364874C00AEFA21 /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
 		8AF896D22364950500AEFA21 /* ModalTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransitionDelegate.swift; sourceTree = "<group>"; };
 		8AF896D42364956E00AEFA21 /* ModalTransitionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransitionConfigurator.swift; sourceTree = "<group>"; };
-		8AF896D62364968300AEFA21 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		8AF896D62364968300AEFA21 /* FormUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUserViewController.swift; sourceTree = "<group>"; };
 		8AF896D923649B5500AEFA21 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		B4F302B8B7A11422F2B7D951 /* Pods-Frogogo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frogogo.release.xcconfig"; path = "Target Support Files/Pods-Frogogo/Pods-Frogogo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +156,7 @@
 				8AF896C42364819B00AEFA21 /* UIFont.swift */,
 				8A519F9E2364F91F00220264 /* Optional.swift */,
 				8AF896C8236482C300AEFA21 /* UIView.swift */,
+				8ADEE3C2236579D100FDCAB3 /* NotificationCenter.swift */,
 				8AF896BB23646DBA00AEFA21 /* UIKit */,
 			);
 			path = Extensions;
@@ -167,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				8AF896D123648F2800AEFA21 /* Helpers */,
+				8A634DA123659D10001D8082 /* Models */,
 				8A1903C32363306600CA9712 /* Generated */,
 				8A1903D2236356F700CA9712 /* General */,
 			);
@@ -186,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				8A1903D1236356D300CA9712 /* ListUsers */,
-				8AF896D823649B1500AEFA21 /* AddUser */,
+				8AF896D823649B1500AEFA21 /* FormUser */,
 				8A5EDB2A236374FD00381528 /* Parents */,
 			);
 			path = Modules;
@@ -226,6 +236,23 @@
 			path = Parents;
 			sourceTree = "<group>";
 		};
+		8A634DA123659D10001D8082 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A634DA62365AEB9001D8082 /* Network */,
+				8A634DA42365A26D001D8082 /* FormModel.swift */,
+				8A634DA223659D20001D8082 /* InputModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A634DA62365AEB9001D8082 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		8ADEE3B22365668700FDCAB3 /* ParticlePullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,13 +282,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		8AF896D823649B1500AEFA21 /* AddUser */ = {
+		8AF896D823649B1500AEFA21 /* FormUser */ = {
 			isa = PBXGroup;
 			children = (
-				8AF896D62364968300AEFA21 /* AddUserViewController.swift */,
+				8A634D9F23659C99001D8082 /* FormUserViewModel.swift */,
+				8AF896D62364968300AEFA21 /* FormUserViewController.swift */,
 				8AF896DB23649B5800AEFA21 /* Cells */,
 			);
-			path = AddUser;
+			path = FormUser;
 			sourceTree = "<group>";
 		};
 		8AF896DB23649B5800AEFA21 /* Cells */ = {
@@ -420,10 +448,12 @@
 				8A1903B923631DD000CA9712 /* AirLayout.swift in Sources */,
 				8A1903C52363307E00CA9712 /* Assets.swift in Sources */,
 				8AF896CB2364874C00AEFA21 /* UIControl.swift in Sources */,
+				8A634DA52365A26D001D8082 /* FormModel.swift in Sources */,
 				8A1903D42363570300CA9712 /* Typealiases.swift in Sources */,
 				8A1903C72363308A00CA9712 /* Strings.swift in Sources */,
 				8ADEE3BC2365674F00FDCAB3 /* UIScrollView+ParticlePullToRefresh.swift in Sources */,
 				8A5EDB2E23637E4900381528 /* UserTableViewCell.swift in Sources */,
+				8A634DA023659C99001D8082 /* FormUserViewModel.swift in Sources */,
 				8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */,
 				8A1903B723631D6800CA9712 /* Then.swift in Sources */,
 				8ADEE3BD2365674F00FDCAB3 /* ParticlePullToRefresh.swift in Sources */,
@@ -431,8 +461,10 @@
 				8A5EDB3023637E9E00381528 /* ReusableView.swift in Sources */,
 				8A1903A72363159B00CA9712 /* ListUsersViewController.swift in Sources */,
 				8A519F9F2364F91F00220264 /* Optional.swift in Sources */,
-				8AF896D72364968300AEFA21 /* AddUserViewController.swift in Sources */,
+				8AF896D72364968300AEFA21 /* FormUserViewController.swift in Sources */,
 				8AF896DA23649B5500AEFA21 /* FormTableViewCell.swift in Sources */,
+				8A634DA323659D20001D8082 /* InputModel.swift in Sources */,
+				8ADEE3C3236579D100FDCAB3 /* NotificationCenter.swift in Sources */,
 				8AF896BF23646E9300AEFA21 /* CALayer.swift in Sources */,
 				8ADEE3BE2365674F00FDCAB3 /* UIImage+Particle.swift in Sources */,
 				8A1903CB2363407C00CA9712 /* UITableView.swift in Sources */,

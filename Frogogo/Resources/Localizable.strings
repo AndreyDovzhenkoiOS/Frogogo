@@ -7,3 +7,13 @@
 //
 
 "listUsers.title" = "Пользователи";
+
+"formUser.title.add" = "Добавить";
+"formUser.title.edit" = "Редактировать";
+
+"formUser.input.firstName" = "Имя";
+"formUser.input.lastName" = "Фамилия";
+"formUser.input.email" = "Почта";
+"formUser.input.urlAvatar" = "Аватар url";
+
+

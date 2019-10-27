@@ -13,4 +13,5 @@ protocol ListUsersViewModelProtocol {
 }
 
 final class ListUsersViewModel: ListUsersViewModelProtocol {
+
 }

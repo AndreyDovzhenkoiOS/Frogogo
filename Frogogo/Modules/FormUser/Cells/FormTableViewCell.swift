@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol FormDelegate: class {
+    func moveView(keyboardHeight: CGFloat, isShow: Bool)
+}
+
 final class FormTableViewCell: UITableViewCell {
 
     private let textField = InputTextField().thenUI {
         $0.tintColor = Asset.darkGreen.color
         $0.textColor = Asset.darkGreen.color
+        $0.keyboardType = .default
+        $0.autocorrectionType = .no
     }
 
     private let lineView = UIView().thenUI {
@@ -36,6 +42,8 @@ final class FormTableViewCell: UITableViewCell {
         }
     }
 
+    private var inputModel: InputModel?
+    private weak var delegate: FormDelegate?
     private var placeholderBottom = NSLayoutConstraint()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -44,15 +52,20 @@ final class FormTableViewCell: UITableViewCell {
         configureLineView()
         configureTextField()
         configureValidationLabel()
+        setupNotifications()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
 
-    func configure() {
-        textField.placeholder = "Почта"
-        validationLabel.text = "инкоретк"
+    func configure(with item: InputModelProtocol, delegate: FormDelegate?) {
+        self.delegate = delegate
+        guard let inputModel = item as? InputModel else { return }
+        self.inputModel = inputModel
+        textField.placeholder = inputModel.placeholderText
+        textField.returnKeyType = inputModel.returnKey
+        textField.keyboardType = inputModel.keyboardType
     }
 
     private func configureLineView() {
@@ -76,6 +89,11 @@ final class FormTableViewCell: UITableViewCell {
         textField.leadingAnchor ~ lineView.leadingAnchor
         textField.trailingAnchor ~ lineView.trailingAnchor - 8
         textField.bottomAnchor ~ lineView.topAnchor + 3
+
+        textField.addAction(for: .editingChanged) { [weak self] _ in
+            let type = self?.inputModel?.formType
+            self?.inputModel?.onChange?(type, self?.textField.text)
+        }
     }
 
     private func updatedPlaceholderLabel() {
@@ -100,6 +118,19 @@ final class FormTableViewCell: UITableViewCell {
                self?.lineView.alpha = isValid ? 0.5 : 1
            }
        }
+
+    private func setupNotifications() {
+        NotificationCenter.addObserver(self, #selector(keyboardWillShow), NotificationName.keyboardWillShowNotification)
+        NotificationCenter.addObserver(self, #selector(keyboardWillShow), NotificationName.keyboardWillHideNotification)
+    }
+
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        let key = UIResponder.keyboardFrameEndUserInfoKey
+        guard let keyboardFrame = notification.userInfo?[key] as? NSValue else { return }
+        let isShow = notification.name == NotificationName.keyboardWillShowNotification
+        delegate?.moveView(keyboardHeight: keyboardFrame.cgRectValue.height, isShow: isShow)
+    }
+
 }
 
 extension FormTableViewCell: UITextFieldDelegate {
@@ -112,17 +143,6 @@ extension FormTableViewCell: UITextFieldDelegate {
         if textField.text.isNilOrEmpty {
             updateValidation(isValid: true)
         }
-    }
-
-    func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
-        if !string.isEmpty, textField.text.isNilOrEmpty && string == " " {
-            return true
-        }
-        textField.text = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
-        textField.sendActions(for: .editingChanged)
-        return false
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
