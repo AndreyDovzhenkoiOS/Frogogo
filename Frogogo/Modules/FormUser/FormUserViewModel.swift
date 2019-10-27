@@ -10,14 +10,20 @@ import Foundation
 
 protocol FormUserViewModelProtocol {
     var items: [InputModel] { get set }
+    var completionHandler: Callback<Bool>? { get set }
+
+    func addedNewUser()
 }
 
 final class FormUserViewModel: FormUserViewModelProtocol {
+    var completionHandler: Callback<Bool>?
+
     private let form = FormModel()
 
     lazy var items: [InputModel] = {
         let onChangeInput: ((InputType?, String?) -> Void) = { [weak form, weak self] type, text in
             form?.fillEvidence(type: type, text: text ?? "")
+            self?.completionHandler?(form?.isFillAllFields == true)
         }
 
         var items: [InputModel] = [
@@ -29,4 +35,8 @@ final class FormUserViewModel: FormUserViewModelProtocol {
 
         return items
     }()
+    
+    func addedNewUser() {
+
+    }
 }

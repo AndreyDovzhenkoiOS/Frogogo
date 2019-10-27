@@ -29,6 +29,12 @@ internal enum L10n {
       /// Редактировать
       internal static let edit = L10n.tr("Localizable", "formUser.title.edit")
     }
+    internal enum Validation {
+      /// Некоректный адрес почты
+      internal static let errorEmail = L10n.tr("Localizable", "formUser.validation.error_email")
+      /// Некоректный адрес url
+      internal static let errorUrl = L10n.tr("Localizable", "formUser.validation.error_url")
+    }
   }
 
   internal enum ListUsers {

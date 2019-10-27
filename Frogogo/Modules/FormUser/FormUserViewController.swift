@@ -11,6 +11,7 @@ import UIKit
 final class FormUserViewController: ParentViewController {
 
     private enum Constants {
+        static let formRoundTop: CGFloat = 40
         static let cellHeight: CGFloat = 70
     }
 
@@ -18,7 +19,7 @@ final class FormUserViewController: ParentViewController {
 
     private let formView = UIView().thenUI {
         $0.backgroundColor = UIColor.white
-        $0.roundTop(radius: 40)
+        $0.roundTop(radius: Constants.formRoundTop)
     }
 
     private let exitButton = CircleButton(color: Asset.darkGreen.color).thenUI {
@@ -63,6 +64,13 @@ final class FormUserViewController: ParentViewController {
         configureExitButton()
         configureActionButton()
         configureTableView()
+        completionHandlers()
+    }
+
+    private func completionHandlers() {
+        viewModel.completionHandler = { [weak self] in
+            self?.actionButton.isEnabled = $0
+        }
     }
 
     private func configureFormView() {
@@ -96,7 +104,7 @@ final class FormUserViewController: ParentViewController {
         actionButton.setTitle(Localized.FormUser.Title.add, for: .normal)
 
         actionButton.addAction(for: .touchUpInside) { [weak self] _ in
-            //  self?.dismiss(animated: true, completion: nil)
+            self?.viewModel.addedNewUser()
         }
     }
 

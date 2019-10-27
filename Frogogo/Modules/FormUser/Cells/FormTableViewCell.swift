@@ -42,6 +42,7 @@ final class FormTableViewCell: UITableViewCell {
         }
     }
 
+    private let validationManager = ValidationManager()
     private var inputModel: InputModel?
     private weak var delegate: FormDelegate?
     private var placeholderBottom = NSLayoutConstraint()
@@ -140,8 +141,13 @@ extension FormTableViewCell: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         inputMode = .inactive
+        guard let type = inputModel?.formType else { return }
+        let validations = validationManager.performValidation(text: textField.text, type: type)
         if textField.text.isNilOrEmpty {
             updateValidation(isValid: true)
+        } else {
+            validationLabel.text = validations.error
+            updateValidation(isValid: validations.isValid)
         }
     }
 

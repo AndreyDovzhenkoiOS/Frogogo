@@ -11,7 +11,7 @@ import UIKit
 final class ListUsersViewController: ParentViewController {
 
     private enum Constants {
-        static let headerHeight: CGFloat = 180
+        static let headerHeight: CGFloat = 170
         static let cellHeight: CGFloat = 85
         static let bottomGradientViewHeight: CGFloat = 100
      }

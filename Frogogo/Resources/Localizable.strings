@@ -10,10 +10,10 @@
 
 "formUser.title.add" = "Добавить";
 "formUser.title.edit" = "Редактировать";
-
 "formUser.input.firstName" = "Имя";
 "formUser.input.lastName" = "Фамилия";
 "formUser.input.email" = "Почта";
 "formUser.input.urlAvatar" = "Аватар url";
-
+"formUser.validation.error_email" = "Некоректный адрес почты";
+"formUser.validation.error_url" = "Некоректный адрес url";
 
