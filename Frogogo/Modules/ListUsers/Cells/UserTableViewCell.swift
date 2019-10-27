@@ -58,10 +58,11 @@ final class UserTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
 
-    func configure() {
-        nameLabel.text = "Андрей Довженко"
-        emailLabel.text = "Почта: andrey-dovgenko@mail.ru"
-        dateLabel.text = "Дата: 11 декабря 2019 г."
+    func configure(with user: User?) {
+        guard let user = user else { return }
+        nameLabel.text = Localized.ListUsers.name(user.fullName)
+        emailLabel.text = Localized.ListUsers.email(user.email)
+        dateLabel.text = Localized.ListUsers.date(user.createdAt)
     }
 
     private func configureCircleView() {

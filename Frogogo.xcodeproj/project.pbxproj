@@ -30,6 +30,10 @@
 		8A634DA52365A26D001D8082 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634DA42365A26D001D8082 /* FormModel.swift */; };
 		8A634DA92365B1F1001D8082 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634DA82365B1F1001D8082 /* ValidationManager.swift */; };
 		8A634DAF2365BEB8001D8082 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634DAE2365BEB8001D8082 /* AlertView.swift */; };
+		8A634DB12365D93D001D8082 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634DB02365D93D001D8082 /* Users.swift */; };
+		8A634DB42365DAFA001D8082 /* RequestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634DB32365DAFA001D8082 /* RequestTarget.swift */; };
+		8A634DB62365DE6B001D8082 /* ReuqestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634DB52365DE6B001D8082 /* ReuqestProvider.swift */; };
+		8A634DB92365DFBA001D8082 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A634DB82365DFBA001D8082 /* NetworkService.swift */; };
 		8ADEE3BC2365674F00FDCAB3 /* UIScrollView+ParticlePullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADEE3B92365674E00FDCAB3 /* UIScrollView+ParticlePullToRefresh.swift */; };
 		8ADEE3BD2365674F00FDCAB3 /* ParticlePullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADEE3BA2365674E00FDCAB3 /* ParticlePullToRefresh.swift */; };
 		8ADEE3BE2365674F00FDCAB3 /* UIImage+Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADEE3BB2365674F00FDCAB3 /* UIImage+Particle.swift */; };
@@ -76,6 +80,10 @@
 		8A634DA42365A26D001D8082 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		8A634DA82365B1F1001D8082 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		8A634DAE2365BEB8001D8082 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		8A634DB02365D93D001D8082 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		8A634DB32365DAFA001D8082 /* RequestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTarget.swift; sourceTree = "<group>"; };
+		8A634DB52365DE6B001D8082 /* ReuqestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuqestProvider.swift; sourceTree = "<group>"; };
+		8A634DB82365DFBA001D8082 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8ADEE3B92365674E00FDCAB3 /* UIScrollView+ParticlePullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ParticlePullToRefresh.swift"; sourceTree = "<group>"; };
 		8ADEE3BA2365674E00FDCAB3 /* ParticlePullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticlePullToRefresh.swift; sourceTree = "<group>"; };
 		8ADEE3BB2365674F00FDCAB3 /* UIImage+Particle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Particle.swift"; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 		8A1903C22363306300CA9712 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				8A634DB22365DADE001D8082 /* Network */,
 				8A634DA72365B1DD001D8082 /* Managers */,
 				8AF896D123648F2800AEFA21 /* Helpers */,
 				8A634DA123659D10001D8082 /* Models */,
@@ -244,9 +253,9 @@
 		8A634DA123659D10001D8082 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8A634DA62365AEB9001D8082 /* Network */,
 				8A634DA42365A26D001D8082 /* FormModel.swift */,
 				8A634DA223659D20001D8082 /* InputModel.swift */,
+				8A634DA62365AEB9001D8082 /* Network */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,6 +263,7 @@
 		8A634DA62365AEB9001D8082 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8A634DB02365D93D001D8082 /* Users.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -264,6 +274,24 @@
 				8A634DA82365B1F1001D8082 /* ValidationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		8A634DB22365DADE001D8082 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8A634DB32365DAFA001D8082 /* RequestTarget.swift */,
+				8A634DB52365DE6B001D8082 /* ReuqestProvider.swift */,
+				8A634DB72365DF9B001D8082 /* Services */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8A634DB72365DF9B001D8082 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8A634DB82365DFBA001D8082 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		8ADEE3B22365668700FDCAB3 /* ParticlePullToRefresh */ = {
@@ -468,14 +496,17 @@
 				8A1903C72363308A00CA9712 /* Strings.swift in Sources */,
 				8ADEE3BC2365674F00FDCAB3 /* UIScrollView+ParticlePullToRefresh.swift in Sources */,
 				8A5EDB2E23637E4900381528 /* UserTableViewCell.swift in Sources */,
+				8A634DB62365DE6B001D8082 /* ReuqestProvider.swift in Sources */,
 				8A634DA023659C99001D8082 /* FormUserViewModel.swift in Sources */,
 				8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */,
 				8A1903B723631D6800CA9712 /* Then.swift in Sources */,
 				8ADEE3BD2365674F00FDCAB3 /* ParticlePullToRefresh.swift in Sources */,
+				8A634DB12365D93D001D8082 /* Users.swift in Sources */,
 				8AF896D32364950500AEFA21 /* ModalTransitionDelegate.swift in Sources */,
 				8A5EDB3023637E9E00381528 /* ReusableView.swift in Sources */,
 				8A1903A72363159B00CA9712 /* ListUsersViewController.swift in Sources */,
 				8A519F9F2364F91F00220264 /* Optional.swift in Sources */,
+				8A634DB42365DAFA001D8082 /* RequestTarget.swift in Sources */,
 				8AF896D72364968300AEFA21 /* FormUserViewController.swift in Sources */,
 				8AF896DA23649B5500AEFA21 /* FormTableViewCell.swift in Sources */,
 				8A634DA323659D20001D8082 /* InputModel.swift in Sources */,
@@ -490,6 +521,7 @@
 				8A1903A32363159B00CA9712 /* AppDelegate.swift in Sources */,
 				8A1903A52363159B00CA9712 /* SceneDelegate.swift in Sources */,
 				8AF896C9236482C300AEFA21 /* UIView.swift in Sources */,
+				8A634DB92365DFBA001D8082 /* NetworkService.swift in Sources */,
 				8AF896C72364824900AEFA21 /* ListUsersViewModel.swift in Sources */,
 				8AF896D52364956E00AEFA21 /* ModalTransitionConfigurator.swift in Sources */,
 				8A634DAF2365BEB8001D8082 /* AlertView.swift in Sources */,

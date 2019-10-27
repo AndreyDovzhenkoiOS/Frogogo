@@ -49,6 +49,18 @@ internal enum L10n {
   }
 
   internal enum ListUsers {
+    /// Дата: %@
+    internal static func date(_ p1: String) -> String {
+      return L10n.tr("Localizable", "listUsers.date", p1)
+    }
+    /// Почта: %@
+    internal static func email(_ p1: String) -> String {
+      return L10n.tr("Localizable", "listUsers.email", p1)
+    }
+    /// Имя: %@
+    internal static func name(_ p1: String) -> String {
+      return L10n.tr("Localizable", "listUsers.name", p1)
+    }
     /// Пользователи
     internal static let title = L10n.tr("Localizable", "listUsers.title")
   }

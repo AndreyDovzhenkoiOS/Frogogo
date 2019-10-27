@@ -10,6 +10,9 @@
 "alert.title_Error" = "Ошибка";
 
 "listUsers.title" = "Пользователи";
+"listUsers.date" = "Дата: %@";
+"listUsers.name" = "Имя: %@";
+"listUsers.email" = "Почта: %@";
 
 "formUser.title.add" = "Добавить";
 "formUser.title.edit" = "Редактировать";
