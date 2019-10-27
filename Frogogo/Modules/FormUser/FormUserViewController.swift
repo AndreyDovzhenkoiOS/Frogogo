@@ -161,7 +161,7 @@ final class FormUserViewController: ParentViewController {
         tableView.dataSource = self
 
         formView.addSubview(tableView)
-        tableView.left(20).right(20).bottom()
+        tableView.left(20).right(20).bottom(50)
         tableView.topAnchor ~ exitButton.bottomAnchor + 10
     }
 
