@@ -13,7 +13,7 @@ import Foundation
 internal enum L10n {
 
   internal enum Error {
-    /// Что-то пошло не так :(
+    /// Что то пошло не так :(
     internal static let server = L10n.tr("Localizable", "Error.server")
   }
 
@@ -29,7 +29,7 @@ internal enum L10n {
   }
 
   internal enum FormUser {
-    /// Для того что-бы продолжить введите корректную почту :(
+    /// Для того что бы продолжить введите корректную почту :(
     internal static let errorEmail = L10n.tr("Localizable", "formUser.error_email")
     /// Для того что-бы продолжить, заполните пожалуйста все поля :(
     internal static let errorEmptyFields = L10n.tr("Localizable", "formUser.error_emptyFields")
@@ -54,9 +54,9 @@ internal enum L10n {
       internal static let edit = L10n.tr("Localizable", "formUser.title.edit")
     }
     internal enum Validation {
-      /// Некоректный адрес почты
+      /// Некорректный адрес почты
       internal static let errorEmail = L10n.tr("Localizable", "formUser.validation.error_email")
-      /// Некоректный адрес url
+      /// Некорректный адрес url
       internal static let errorUrl = L10n.tr("Localizable", "formUser.validation.error_url")
     }
   }
