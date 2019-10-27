@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class FormUserViewController: ParentViewController {
 
@@ -99,6 +100,7 @@ final class FormUserViewController: ParentViewController {
         completionHandlers()
         configureVisualEffectView()
         configureLoadingView()
+        setIconImageView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -227,6 +229,20 @@ final class FormUserViewController: ParentViewController {
                 self.loadingView.stopAnimating()
         }
     }
+
+    private func setIconImageView() {
+        guard let user = viewModel.user else {
+            iconImageView.isHidden = true
+            circleView.isHidden = true
+            return
+        }
+
+        if let url = user.avatar, !url.isEmpty {
+            iconImageView.kf.setImage(with: URL(string: url))
+        } else {
+            iconImageView.image = Asset.emptyIcon4.image
+        }
+    }
 }
 
 extension FormUserViewController: UITableViewDataSource {
@@ -236,7 +252,9 @@ extension FormUserViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return (tableView.dequeueReusableCell(for: indexPath) as FormTableViewCell).then {
-            $0.configure(with: viewModel.items[indexPath.row], delegate: self)
+            $0.configure(with: viewModel.items[indexPath.row],
+                         user: viewModel.user,
+                         delegate: self)
         }
     }
 }

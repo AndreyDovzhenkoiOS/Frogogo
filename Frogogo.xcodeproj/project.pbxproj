@@ -22,6 +22,7 @@
 		8A1903D42363570300CA9712 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903D32363570300CA9712 /* Typealiases.swift */; };
 		8A1F9D112366277D00DBF768 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F9D102366277D00DBF768 /* LoadingView.swift */; };
 		8A1F9D132366303A00DBF768 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F9D122366303A00DBF768 /* AlertModel.swift */; };
+		8A1F9D162366376400DBF768 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F9D152366376400DBF768 /* ViewControllerAssembly.swift */; };
 		8A519F9D2364ED8500220264 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A519F9C2364ED8500220264 /* InputTextField.swift */; };
 		8A519F9F2364F91F00220264 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A519F9E2364F91F00220264 /* Optional.swift */; };
 		8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2B2363751300381528 /* ParentViewController.swift */; };
@@ -74,6 +75,7 @@
 		8A1903D32363570300CA9712 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		8A1F9D102366277D00DBF768 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8A1F9D122366303A00DBF768 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		8A1F9D152366376400DBF768 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
 		8A519F9C2364ED8500220264 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		8A519F9E2364F91F00220264 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		8A5EDB2B2363751300381528 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		8A1903C22363306300CA9712 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				8A1F9D142366375500DBF768 /* Factories */,
 				8A634DB22365DADE001D8082 /* Network */,
 				8A634DA72365B1DD001D8082 /* Managers */,
 				8AF896D123648F2800AEFA21 /* Helpers */,
@@ -244,6 +247,14 @@
 				8A5EDB2D23637E4900381528 /* UserTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8A1F9D142366375500DBF768 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				8A1F9D152366376400DBF768 /* ViewControllerAssembly.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		8A5EDB2A236374FD00381528 /* Parents */ = {
@@ -548,6 +559,7 @@
 				8AF896BD23646DCD00AEFA21 /* CircleButton.swift in Sources */,
 				8A519F9D2364ED8500220264 /* InputTextField.swift in Sources */,
 				8AF896C52364819B00AEFA21 /* UIFont.swift in Sources */,
+				8A1F9D162366376400DBF768 /* ViewControllerAssembly.swift in Sources */,
 				8A1903BC23632B8C00CA9712 /* CAGradientLayer.swift in Sources */,
 				8A1903A32363159B00CA9712 /* AppDelegate.swift in Sources */,
 				8A1903A52363159B00CA9712 /* SceneDelegate.swift in Sources */,

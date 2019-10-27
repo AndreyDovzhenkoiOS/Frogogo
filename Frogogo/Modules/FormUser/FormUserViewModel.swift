@@ -17,6 +17,8 @@ enum StateForm: Error {
 }
 
 protocol FormUserViewModelProtocol {
+    var form: FormModel { get set }
+    var user: User? { get set }
     var items: [InputModel] { get set }
     var currentState: StateForm? { get set }
 
@@ -28,12 +30,20 @@ protocol FormUserViewModelProtocol {
 
 final class FormUserViewModel: FormUserViewModelProtocol {
 
+    var user: User? {
+        didSet {
+            if let user = user {
+                form.update(with: user)
+            }
+        }
+    }
+
     var currentState: StateForm?
     var callBackSuccess: VoidCallback?
     var completionHandler: Callback<StateForm>?
 
     private let service: NetworkService
-    private let form = FormModel()
+    var form = FormModel()
     private let validationManager = ValidationManager()
 
     init(service: NetworkService) {
@@ -72,7 +82,11 @@ final class FormUserViewModel: FormUserViewModelProtocol {
     }
 
     private func saveNewUser() {
-        requestAddUser()
+        guard let user = user else {
+            requestAddUser()
+            return
+        }
+        requestEditUser(id: user.id)
     }
 }
 
@@ -97,7 +111,7 @@ extension FormUserViewModel {
                 return
             }
             guard result == nil else {
-                self?.completionHandler?(.successAdd)
+                self?.completionHandler?(.successEdit)
                 return
             }
         }

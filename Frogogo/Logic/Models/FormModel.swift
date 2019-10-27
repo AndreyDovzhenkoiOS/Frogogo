@@ -33,6 +33,7 @@ class FormModel {
                                lastName: lastName,
                                email: email)
     }
+
     func fillEvidence(type: InputType?, text: String) {
         switch type {
         case .firstName?:
@@ -46,5 +47,12 @@ class FormModel {
         default:
             break
         }
+    }
+
+    func update(with user: User) {
+        firstName = user.firstName
+        lastName = user.lastName
+        email = user.email
+        usrlAvatar = user.avatar
     }
 }

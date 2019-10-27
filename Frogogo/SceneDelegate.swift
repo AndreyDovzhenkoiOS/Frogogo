@@ -16,15 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+
         window = UIWindow()
         window?.windowScene = windowScene
 
-        let service = NetworkService(provider: RequestProvider())
-        let viewModel = ListUsersViewModel(service: service)
-        let viewController = ListUsersViewController(viewModel: viewModel)
-
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let rootViewController = ViewControllerAssembly.resolve(type: .listUsers)
+        let navigationController = UINavigationController(rootViewController: rootViewController)
         navigationController.navigationBar.prefersLargeTitles = true
+
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

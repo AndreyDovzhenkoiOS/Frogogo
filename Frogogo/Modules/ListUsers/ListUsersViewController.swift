@@ -154,17 +154,12 @@ final class ListUsersViewController: ParentViewController {
         addButton.addAction(for: .touchUpInside) { [weak self] _ in
             self?.addButton.pulsate()
 
-            let service = NetworkService(provider: RequestProvider())
-            let viewModel = FormUserViewModel(service: service)
-
-            viewModel.callBackSuccess = { [weak self] in
-                self?.setupLoadingView(isShow: true)
+            let vc = ViewControllerAssembly.resolve(type: .formUser) {
+                [weak self] in self?.setupLoadingView(isShow: true)
                 self?.viewModel.requestGetUsers()
             }
 
-            let viewController = FormUserViewController(viewModel: viewModel)
-
-            self?.present(viewController, animated: true, completion: nil)
+            self?.present(vc, animated: true, completion: nil)
         }
     }
 
@@ -236,5 +231,20 @@ extension ListUsersViewController: UITableViewDataSource {
 
 extension ListUsersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let vc = ViewControllerAssembly.resolve(type: .formUser) {
+            [weak self] in self?.setupLoadingView(isShow: true)
+            self?.viewModel.requestGetUsers()
+        }
+
+        if let formUserVC = vc as? FormUserViewController {
+            formUserVC.viewModel.user = self.viewModel.users?[indexPath.row]
+            formUserVC.viewModel.callBackSuccess = { [weak self] in
+                self?.setupLoadingView(isShow: true)
+                self?.viewModel.requestGetUsers()
+            }
+        }
+
+        present(vc, animated: true, completion: nil)
     }
 }

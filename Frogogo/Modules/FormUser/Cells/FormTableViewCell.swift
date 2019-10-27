@@ -45,7 +45,6 @@ final class FormTableViewCell: UITableViewCell {
     private let validationManager = ValidationManager()
     private var inputModel: InputModel?
     private weak var delegate: FormDelegate?
-    private var placeholderBottom = NSLayoutConstraint()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -60,13 +59,19 @@ final class FormTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
 
-    func configure(with item: InputModelProtocol, delegate: FormDelegate?) {
+    func configure(with item: InputModelProtocol, user: User?, delegate: FormDelegate?) {
         self.delegate = delegate
+
         guard let inputModel = item as? InputModel else { return }
         self.inputModel = inputModel
+
         textField.placeholder = inputModel.placeholderText
         textField.returnKeyType = inputModel.returnKey
         textField.keyboardType = inputModel.keyboardType
+
+        if let user = user {
+            setTextForTextfield(user: user)
+        }
     }
 
     private func configureLineView() {
@@ -98,7 +103,7 @@ final class FormTableViewCell: UITableViewCell {
     }
 
     private func updatedPlaceholderLabel() {
-        let isActive = inputMode == .active || textField.text?.isEmpty == false
+        let isActive = inputMode == .active || !textField.text.isNilOrEmpty
         textField.inputModeUpdated(isActive: isActive)
     }
 
@@ -132,6 +137,20 @@ final class FormTableViewCell: UITableViewCell {
         delegate?.moveView(keyboardHeight: keyboardFrame.cgRectValue.height, isShow: isShow)
     }
 
+    private func setTextForTextfield(user: User) {
+        switch inputModel?.formType {
+        case .firstName:
+            textField.text = user.firstName
+        case .lastName:
+            textField.text = user.lastName
+        case .email:
+            textField.text = user.email
+        case .usrlAvatar:
+            textField.text = user.avatar
+        default:
+            break
+        }
+    }
 }
 
 extension FormTableViewCell: UITextFieldDelegate {
