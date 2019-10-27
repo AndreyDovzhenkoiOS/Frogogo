@@ -68,6 +68,12 @@ final class FormUserViewController: ParentViewController {
         $0.effect = UIBlurEffect(style: .dark)
     }
 
+    private let loadingView = LoadingView().thenUI {
+        $0.color = Asset.lightGreen.color
+        $0.lineWidth = 4
+        $0.isHidden = true
+    }
+
     private let alertView = AlertView().prepareForAutoLayout()
 
     var viewModel: FormUserViewModelProtocol
@@ -92,17 +98,32 @@ final class FormUserViewController: ParentViewController {
         configureTableView()
         completionHandlers()
         configureVisualEffectView()
+        configureLoadingView()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        loadingView.stopAnimating()
+        loadingView.removeFromSuperview()
     }
 
     private func completionHandlers() {
         viewModel.completionHandler = { [weak self] in
+            self?.viewModel.currentState = $0
+            self?.setupLoadingView(isShow: false)
+            self?.tableView.isHidden = false
+
             switch $0 {
             case .incorrectEmail:
-                self?.setAlert(title: Localized.Alert.titleError,
-                               description: Localized.FormUser.errorEmail)
+                self?.setAlert(with: AlertModel.incorrectEmail)
             case .emptyFields:
-                self?.setAlert(title: Localized.Alert.titleError,
-                               description: Localized.FormUser.errorEmptyFields)
+                self?.setAlert(with: AlertModel.emptyFields)
+            case .somethingWentWrong:
+                self?.setAlert(with: AlertModel.somethingWentWrong)
+            case .successAdd:
+                self?.setAlert(with: AlertModel.successAdd)
+            case .successEdit:
+                self?.setAlert(with: AlertModel.successEdit)
             }
         }
     }
@@ -150,7 +171,12 @@ final class FormUserViewController: ParentViewController {
 
         actionButton.addAction(for: .touchUpInside) { [weak self] _ in
             self?.actionButton.pulsate()
-            self?.viewModel.addedNewUser()
+            self?.setupLoadingView(isShow: true)
+            self?.tableView.isHidden = true
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self?.viewModel.addedNewUser()
+            }
         }
     }
 
@@ -166,19 +192,40 @@ final class FormUserViewController: ParentViewController {
         visualEffectView.withoutSafeArea { $0.pin() }
     }
 
-    private func setAlert(title: String, description: String) {
+    private func configureLoadingView() {
+        formView.addSubview(loadingView)
+        loadingView.height(60).aspectRatio().centerX().centerY(-14)
+    }
+
+    private func setAlert(with model: AlertModel) {
         view.addSubview(alertView)
         alertView.width(Constants.alertWidth).height(Constants.alertHeight)
         alertView.centerYAnchor ~ formView.centerYAnchor - 50
         alertView.centerXAnchor ~ formView.centerXAnchor
-        alertView.configure(title: title,
-                            description: description,
-                            titleAction: Localized.Alert.titleActionOk)
+
+        alertView.configure(with: model)
+
         alertView.animationHandler = { [weak self] in
             self?.visualEffectView.alpha = CGFloat($0.rawValue)
         }
 
+        alertView.actionHandler = { [weak self] in
+            if self?.viewModel.currentState == .successAdd ||
+                self?.viewModel.currentState == .successEdit {
+                self?.viewModel.callBackSuccess?()
+                self?.dismiss(animated: true, completion: nil)
+            }
+        }
+
         alertView.setAnimationAlert(state: .show)
+    }
+
+    private func setupLoadingView(isShow: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            isShow ?
+                self.loadingView.startAnimating() :
+                self.loadingView.stopAnimating()
+        }
     }
 }
 

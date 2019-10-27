@@ -6,9 +6,12 @@
 //  Copyright © 2019 Andrey Dovzhenko. All rights reserved.
 //
 
-"alert.title_Action_Ok" = "Хорошо";
+"alert.title_Action_ok" = "Ok";
+"alert.title_Action_understand" = "Понял";
 "alert.title_Error" = "Ошибка";
+"alert.title_Success" = "Успех";
 
+"listUsers.empty_title" = "Пусто";
 "listUsers.title" = "Пользователи";
 "listUsers.date" = "Дата: %@";
 "listUsers.name" = "Имя: %@";
@@ -24,3 +27,7 @@
 "formUser.validation.error_url" = "Некоректный адрес url";
 "formUser.error_emptyFields" = "Для того что-бы продолжить, заполните пожалуйста все поля :(";
 "formUser.error_email" = "Для того что-бы продолжить введите корректную почту :(";
+"formUser.success_add" = "Пользователь успешно был добавлен в список :)";
+"formUser.success_edit" = "Изменения сохранены :)";
+
+"Error.server" = "Что-то пошло не так :(";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class UserTableViewCell: UITableViewCell {
 
@@ -18,8 +19,7 @@ final class UserTableViewCell: UITableViewCell {
     }
 
     private let iconImageView = UIImageView().thenUI {
-        $0.contentMode = .scaleAspectFit
-        $0.image = Asset.emptyIcon4.image
+        $0.contentMode = .scaleAspectFill
     }
 
     private let nameLabel = UILabel().thenUI {
@@ -63,6 +63,11 @@ final class UserTableViewCell: UITableViewCell {
         nameLabel.text = Localized.ListUsers.name(user.fullName)
         emailLabel.text = Localized.ListUsers.email(user.email)
         dateLabel.text = Localized.ListUsers.date(user.createdAt)
+        if let url = user.avatar, !url.isEmpty {
+            iconImageView.kf.setImage(with: URL(string: url))
+        } else {
+            iconImageView.image = Asset.emptyIcon4.image
+        }
     }
 
     private func configureCircleView() {

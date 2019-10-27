@@ -14,7 +14,9 @@ final class ListUsersViewController: ParentViewController {
         static let headerHeight: CGFloat = 170
         static let cellHeight: CGFloat = 85
         static let bottomGradientViewHeight: CGFloat = 100
-     }
+        static let alertHeight: CGFloat = 186
+        static let alertWidth: CGFloat = 305
+    }
 
     override var navigationBarHidesShadow: Bool {
         return true
@@ -48,6 +50,27 @@ final class ListUsersViewController: ParentViewController {
         $0.layer.setupShadow(radius: 5, opacity: 0.2, height: 3)
     }
 
+    private let loadingView = LoadingView().thenUI {
+        $0.color = Asset.lightGreen.color
+        $0.lineWidth = 4
+        $0.isHidden = true
+    }
+
+    private let emptyLabel = UILabel().thenUI {
+        $0.text = Localized.ListUsers.emptyTitle
+        $0.textColor = Asset.lightPinkOpacity.color
+        $0.textAlignment = .center
+        $0.font = UIFont.system(.regular, size: 26)
+        $0.isHidden = true
+    }
+
+    private let visualEffectView = UIVisualEffectView().thenUI {
+        $0.alpha = 0
+        $0.effect = UIBlurEffect(style: .dark)
+    }
+
+    private let alertView = AlertView().prepareForAutoLayout()
+
     deinit {
       tableView.removeParticlePullToRefresh()
     }
@@ -73,10 +96,14 @@ final class ListUsersViewController: ParentViewController {
         configureAddButton()
         configureBottomGradientView()
         completionHandlers()
+        configureEmptyLabel()
+        configureVisualEffectView()
+        configureLoadingView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupLoadingView(isShow: true)
         viewModel.requestGetUsers()
     }
 
@@ -126,21 +153,71 @@ final class ListUsersViewController: ParentViewController {
 
         addButton.addAction(for: .touchUpInside) { [weak self] _ in
             self?.addButton.pulsate()
-            self?.present(FormUserViewController(viewModel: FormUserViewModel()),
-                          animated: true,
-                          completion: nil)
+
+            let service = NetworkService(provider: RequestProvider())
+            let viewModel = FormUserViewModel(service: service)
+
+            viewModel.callBackSuccess = { [weak self] in
+                self?.setupLoadingView(isShow: true)
+                self?.viewModel.requestGetUsers()
+            }
+
+            let viewController = FormUserViewController(viewModel: viewModel)
+
+            self?.present(viewController, animated: true, completion: nil)
         }
+    }
+
+    private func configureLoadingView() {
+        view.addSubview(loadingView)
+        loadingView.height(60).aspectRatio().centerX().centerY(-20)
+    }
+
+    private func configureEmptyLabel() {
+        view.addSubview(emptyLabel)
+        emptyLabel.centerY(-25).left(16).right(16).height(30)
+    }
+
+    private func configureVisualEffectView() {
+        view.addSubview(visualEffectView)
+        visualEffectView.hideKeyboardWhenTappedAround()
+        visualEffectView.withoutSafeArea { $0.pin() }
+    }
+
+    private func setAlert(with model: AlertModel) {
+        view.addSubview(alertView)
+        alertView.centerY(-20).centerX()
+        alertView.width(Constants.alertWidth).height(Constants.alertHeight)
+
+        alertView.configure(with: model)
+
+        alertView.animationHandler = { [weak self] in
+            self?.visualEffectView.alpha = CGFloat($0.rawValue)
+        }
+
+        alertView.setAnimationAlert(state: .show)
     }
 
     private func completionHandlers() {
         viewModel.completionHandler = { [weak self] in
+            self?.setupLoadingView(isShow: false)
             switch $0 {
             case .update:
                 self?.tableView.particlePullToRefresh?.endRefreshing()
                 self?.tableView.reloadWithAnimationFadeInTop()
             case .error:
-                print("fdsf")
+                self?.setAlert(with: AlertModel.somethingWentWrong)
             }
+
+            self?.emptyLabel.isHidden = self?.viewModel.users?.isEmpty == false
+        }
+    }
+
+    private func setupLoadingView(isShow: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            isShow ?
+                self.loadingView.startAnimating() :
+                self.loadingView.stopAnimating()
         }
     }
 }

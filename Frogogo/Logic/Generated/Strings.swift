@@ -12,11 +12,20 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
+  internal enum Error {
+    /// Что-то пошло не так :(
+    internal static let server = L10n.tr("Localizable", "Error.server")
+  }
+
   internal enum Alert {
-    /// Хорошо
-    internal static let titleActionOk = L10n.tr("Localizable", "alert.title_Action_Ok")
+    /// Ok
+    internal static let titleActionOk = L10n.tr("Localizable", "alert.title_Action_ok")
+    /// Понял
+    internal static let titleActionUnderstand = L10n.tr("Localizable", "alert.title_Action_understand")
     /// Ошибка
     internal static let titleError = L10n.tr("Localizable", "alert.title_Error")
+    /// Успех
+    internal static let titleSuccess = L10n.tr("Localizable", "alert.title_Success")
   }
 
   internal enum FormUser {
@@ -24,6 +33,10 @@ internal enum L10n {
     internal static let errorEmail = L10n.tr("Localizable", "formUser.error_email")
     /// Для того что-бы продолжить, заполните пожалуйста все поля :(
     internal static let errorEmptyFields = L10n.tr("Localizable", "formUser.error_emptyFields")
+    /// Пользователь успешно был добавлен в список :)
+    internal static let successAdd = L10n.tr("Localizable", "formUser.success_add")
+    /// Изменения сохранены :)
+    internal static let successEdit = L10n.tr("Localizable", "formUser.success_edit")
     internal enum Input {
       /// Почта
       internal static let email = L10n.tr("Localizable", "formUser.input.email")
@@ -57,6 +70,8 @@ internal enum L10n {
     internal static func email(_ p1: String) -> String {
       return L10n.tr("Localizable", "listUsers.email", p1)
     }
+    /// Пусто
+    internal static let emptyTitle = L10n.tr("Localizable", "listUsers.empty_title")
     /// Имя: %@
     internal static func name(_ p1: String) -> String {
       return L10n.tr("Localizable", "listUsers.name", p1)

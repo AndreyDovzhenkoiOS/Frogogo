@@ -20,6 +20,8 @@
 		8A1903C72363308A00CA9712 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903C62363308A00CA9712 /* Strings.swift */; };
 		8A1903CB2363407C00CA9712 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903CA2363407C00CA9712 /* UITableView.swift */; };
 		8A1903D42363570300CA9712 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1903D32363570300CA9712 /* Typealiases.swift */; };
+		8A1F9D112366277D00DBF768 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F9D102366277D00DBF768 /* LoadingView.swift */; };
+		8A1F9D132366303A00DBF768 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F9D122366303A00DBF768 /* AlertModel.swift */; };
 		8A519F9D2364ED8500220264 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A519F9C2364ED8500220264 /* InputTextField.swift */; };
 		8A519F9F2364F91F00220264 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A519F9E2364F91F00220264 /* Optional.swift */; };
 		8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2B2363751300381528 /* ParentViewController.swift */; };
@@ -70,6 +72,8 @@
 		8A1903C62363308A00CA9712 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		8A1903CA2363407C00CA9712 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		8A1903D32363570300CA9712 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		8A1F9D102366277D00DBF768 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8A1F9D122366303A00DBF768 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		8A519F9C2364ED8500220264 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		8A519F9E2364F91F00220264 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		8A5EDB2B2363751300381528 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 			children = (
 				8A634DA42365A26D001D8082 /* FormModel.swift */,
 				8A634DA223659D20001D8082 /* InputModel.swift */,
+				8A1F9D122366303A00DBF768 /* AlertModel.swift */,
 				8A634DA62365AEB9001D8082 /* Network */,
 			);
 			path = Models;
@@ -309,8 +314,9 @@
 			children = (
 				8AF896BC23646DCD00AEFA21 /* CircleButton.swift */,
 				8A519F9C2364ED8500220264 /* InputTextField.swift */,
-				8ADEE3B22365668700FDCAB3 /* ParticlePullToRefresh */,
 				8A634DAE2365BEB8001D8082 /* AlertView.swift */,
+				8A1F9D102366277D00DBF768 /* LoadingView.swift */,
+				8ADEE3B22365668700FDCAB3 /* ParticlePullToRefresh */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 				8A19039B2363159B00CA9712 /* Sources */,
 				8A19039C2363159B00CA9712 /* Frameworks */,
 				8A19039D2363159B00CA9712 /* Resources */,
+				C4203797316F44DD3A57CF2A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -458,6 +465,28 @@
 			shellPath = /bin/sh;
 			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
 		};
+		C4203797316F44DD3A57CF2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Frogogo/Pods-Frogogo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Frogogo/Pods-Frogogo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D35088F3F8D9624428D849C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,6 +527,7 @@
 				8A5EDB2E23637E4900381528 /* UserTableViewCell.swift in Sources */,
 				8A634DB62365DE6B001D8082 /* ReuqestProvider.swift in Sources */,
 				8A634DA023659C99001D8082 /* FormUserViewModel.swift in Sources */,
+				8A1F9D112366277D00DBF768 /* LoadingView.swift in Sources */,
 				8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */,
 				8A1903B723631D6800CA9712 /* Then.swift in Sources */,
 				8ADEE3BD2365674F00FDCAB3 /* ParticlePullToRefresh.swift in Sources */,
@@ -514,6 +544,7 @@
 				8AF896BF23646E9300AEFA21 /* CALayer.swift in Sources */,
 				8ADEE3BE2365674F00FDCAB3 /* UIImage+Particle.swift in Sources */,
 				8A1903CB2363407C00CA9712 /* UITableView.swift in Sources */,
+				8A1F9D132366303A00DBF768 /* AlertModel.swift in Sources */,
 				8AF896BD23646DCD00AEFA21 /* CircleButton.swift in Sources */,
 				8A519F9D2364ED8500220264 /* InputTextField.swift in Sources */,
 				8AF896C52364819B00AEFA21 /* UIFont.swift in Sources */,

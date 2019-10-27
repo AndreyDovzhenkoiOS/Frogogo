@@ -56,12 +56,14 @@ final class AlertView: UIView {
         imageView.pin()
     }
 
-    func configure(title: String,
-                   description: String,
-                   titleAction: String = Localized.Alert.titleActionOk) {
-        titleLabel.text = title
-        desriptionLabel.text = description
-        actionButton.setTitle(titleAction, for: .normal)
+    func configure(with model: AlertModel) {
+        titleLabel.text = model.title
+        desriptionLabel.text = model.description
+        actionButton.setTitle(model.titleAction, for: .normal)
+
+        let color = model.isError ? Asset.lightRed.color : Asset.darkGreen.color
+        titleLabel.textColor = color
+        actionButton.backgroundColor = color
     }
 
     func setAnimationAlert(state: AlertState) {

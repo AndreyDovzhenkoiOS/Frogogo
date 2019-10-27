@@ -47,7 +47,12 @@ final class RequestProvider: RequestProviderProtocol {
         }
 
         var request = URLRequest(url: url)
-        request.httpMethod = target.method.rawValue
+        request.httpMethod = target.method.rawValue.uppercased()
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+
+        if let httpBody = try? target.httpBody() {
+            request.httpBody = httpBody
+        }
 
         let task = createDataTask(from: request, completion: completion)
         task.resume()
@@ -58,9 +63,6 @@ final class RequestProvider: RequestProviderProtocol {
         components.scheme = "https"
         components.host = "frogogo-test.herokuapp.com"
         components.path = target.path
-        if let parameters = target.parameters {
-            components.queryItems = parameters.map { URLQueryItem(name: $0, value: $1) }
-        }
         return components.url
     }
 

@@ -26,6 +26,18 @@ struct User: Codable {
     }
 
     var fullName: String {
-        return firstName + lastName
+        return "\(firstName) \(lastName)"
+    }
+}
+
+struct UserRequestBody: Codable {
+    let firstName: String
+    let lastName: String
+    let email: String
+
+    private enum CodingKeys: String, CodingKey {
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case email
     }
 }

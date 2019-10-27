@@ -8,18 +8,37 @@
 
 import Foundation
 
+enum StateForm: Error {
+    case emptyFields
+    case incorrectEmail
+    case somethingWentWrong
+    case successAdd
+    case successEdit
+}
+
 protocol FormUserViewModelProtocol {
     var items: [InputModel] { get set }
-    var completionHandler: Callback<ErrorValidation>? { get set }
+    var currentState: StateForm? { get set }
+
+    var completionHandler: Callback<StateForm>? { get set }
+    var callBackSuccess: VoidCallback? { get set }
 
     func addedNewUser()
 }
 
 final class FormUserViewModel: FormUserViewModelProtocol {
-    var completionHandler: Callback<ErrorValidation>?
 
+    var currentState: StateForm?
+    var callBackSuccess: VoidCallback?
+    var completionHandler: Callback<StateForm>?
+
+    private let service: NetworkService
     private let form = FormModel()
     private let validationManager = ValidationManager()
+
+    init(service: NetworkService) {
+        self.service = service
+    }
 
     lazy var items: [InputModel] = {
         let onChangeInput: ((InputType?, String?) -> Void) = { [weak form, weak self] type, text in
@@ -53,6 +72,34 @@ final class FormUserViewModel: FormUserViewModelProtocol {
     }
 
     private func saveNewUser() {
+        requestAddUser()
+    }
+}
 
+extension FormUserViewModel {
+    private func requestAddUser() {
+        service.addUser(requestBody: form.userRequestBody) { [weak self] result, error in
+            guard error == nil else {
+                self?.completionHandler?(.somethingWentWrong)
+                return
+            }
+            guard result == nil else {
+                self?.completionHandler?(.successAdd)
+                return
+            }
+        }
+    }
+
+    func requestEditUser(id: Int) {
+        service.editUser(id: id, requestBody: form.userRequestBody) { [weak self] result, error in
+            guard error == nil else {
+                self?.completionHandler?(.somethingWentWrong)
+                return
+            }
+            guard result == nil else {
+                self?.completionHandler?(.successAdd)
+                return
+            }
+        }
     }
 }

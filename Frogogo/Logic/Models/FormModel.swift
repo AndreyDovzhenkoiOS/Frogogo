@@ -28,6 +28,11 @@ class FormModel {
         return !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty
     }
 
+    var userRequestBody: UserRequestBody {
+        return UserRequestBody(firstName: firstName,
+                               lastName: lastName,
+                               email: email)
+    }
     func fillEvidence(type: InputType?, text: String) {
         switch type {
         case .firstName?:
