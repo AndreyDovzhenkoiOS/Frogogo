@@ -239,6 +239,7 @@ extension ListUsersViewController: UITableViewDelegate {
 
         if let formUserVC = vc as? FormUserViewController {
             formUserVC.viewModel.user = self.viewModel.users?[indexPath.row]
+
             formUserVC.viewModel.callBackSuccess = { [weak self] in
                 self?.setupLoadingView(isShow: true)
                 self?.viewModel.requestGetUsers()

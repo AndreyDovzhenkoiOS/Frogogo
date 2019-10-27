@@ -163,12 +163,11 @@ final class FormUserViewController: ParentViewController {
         formView.addSubview(tableView)
         tableView.left(20).right(20).bottom()
         tableView.topAnchor ~ exitButton.bottomAnchor + 10
-        tableView.bottomAnchor ~ actionButton.topAnchor
     }
 
     private func configureActionButton() {
         formView.addSubview(actionButton)
-        actionButton.bottom().left(16).right(16).bottom(10).height(50)
+        actionButton.left(16).right(16).bottom(10).height(50)
         actionButton.setTitle(Localized.FormUser.Title.add, for: .normal)
 
         actionButton.addAction(for: .touchUpInside) { [weak self] _ in
