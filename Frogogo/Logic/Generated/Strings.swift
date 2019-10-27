@@ -18,10 +18,10 @@ internal enum L10n {
   }
 
   internal enum Alert {
+    /// Выход
+    internal static let titleActionExit = L10n.tr("Localizable", "alert.title_Action_exit")
     /// Ok
     internal static let titleActionOk = L10n.tr("Localizable", "alert.title_Action_ok")
-    /// Понял
-    internal static let titleActionUnderstand = L10n.tr("Localizable", "alert.title_Action_understand")
     /// Ошибка
     internal static let titleError = L10n.tr("Localizable", "alert.title_Error")
     /// Успех

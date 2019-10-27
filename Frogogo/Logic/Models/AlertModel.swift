@@ -17,21 +17,21 @@ struct AlertModel {
     static var incorrectEmail: AlertModel {
         return AlertModel(title: Localized.Alert.titleError,
                           description: Localized.FormUser.errorEmail,
-                          titleAction: Localized.Alert.titleActionUnderstand,
+                          titleAction: Localized.Alert.titleActionExit,
                           isError: true)
     }
 
     static var emptyFields: AlertModel {
         return AlertModel(title: Localized.Alert.titleError,
                           description: Localized.FormUser.errorEmptyFields,
-                          titleAction: Localized.Error.server,
+                          titleAction: Localized.Alert.titleActionExit,
                           isError: true)
     }
 
     static var somethingWentWrong: AlertModel {
         return AlertModel(title: Localized.Alert.titleError,
                           description: Localized.Error.server,
-                          titleAction: Localized.Alert.titleActionUnderstand,
+                          titleAction: Localized.Alert.titleActionExit,
                           isError: true)
     }
 

@@ -7,7 +7,7 @@
 //
 
 "alert.title_Action_ok" = "Ok";
-"alert.title_Action_understand" = "Понял";
+"alert.title_Action_exit" = "Выход";
 "alert.title_Error" = "Ошибка";
 "alert.title_Success" = "Успех";
 

@@ -12,7 +12,6 @@ import Kingfisher
 final class FormUserViewController: ParentViewController {
 
     private enum Constants {
-        static let formHeight: CGFloat = 420
         static let formRoundTop: CGFloat = 40
         static let cellHeight: CGFloat = 70
         static let alertHeight: CGFloat = 186
@@ -134,7 +133,7 @@ final class FormUserViewController: ParentViewController {
         view.addSubview(formView)
         formView.hideKeyboardWhenTappedAround()
         formView.withoutSafeArea {
-            $0.left().right().bottom().height(Constants.formHeight)
+            $0.left().right().bottom().height(UIDevice.currentHeight() / 1.6)
         }
     }
 
@@ -161,7 +160,7 @@ final class FormUserViewController: ParentViewController {
         tableView.dataSource = self
 
         formView.addSubview(tableView)
-        tableView.left(20).right(20).bottom(50)
+        tableView.left(20).right(20).bottomAnchor ~ actionButton.topAnchor
         tableView.topAnchor ~ exitButton.bottomAnchor + 10
     }
 
