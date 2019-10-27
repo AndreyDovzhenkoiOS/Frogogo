@@ -11,10 +11,13 @@ import UIKit
 final class FormUserViewController: ParentViewController {
 
     private enum Constants {
+        static let formHeight: CGFloat = 420
         static let formRoundTop: CGFloat = 40
         static let cellHeight: CGFloat = 70
         static let alertHeight: CGFloat = 186
         static let alertWidth: CGFloat = 305
+        static let circleHeight: CGFloat = 62
+        static let iconHeight: CGFloat = 50
     }
 
     private let modalTransition = ModalTransitionDelegate()
@@ -22,6 +25,18 @@ final class FormUserViewController: ParentViewController {
     private let formView = UIView().thenUI {
         $0.backgroundColor = UIColor.white
         $0.roundTop(radius: Constants.formRoundTop)
+    }
+
+    private let circleView = UIView().thenUI {
+        $0.backgroundColor = .clear
+        $0.layer.borderColor = Asset.lightGreen.color.cgColor
+        $0.layer.borderWidth = 2
+        $0.layer.cornerRadius = 25
+    }
+
+    private let iconImageView = UIImageView().thenUI {
+        $0.contentMode = .scaleAspectFit
+        $0.image = Asset.emptyIcon4.image
     }
 
     private let exitButton = CircleButton(color: Asset.darkGreen.color).thenUI {
@@ -70,6 +85,8 @@ final class FormUserViewController: ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFormView()
+        configureCircleView()
+        configureIconImageView()
         configureExitButton()
         configureActionButton()
         configureTableView()
@@ -94,8 +111,18 @@ final class FormUserViewController: ParentViewController {
         view.addSubview(formView)
         formView.hideKeyboardWhenTappedAround()
         formView.withoutSafeArea {
-            $0.left().right().bottom().height(410)
+            $0.left().right().bottom().height(Constants.formHeight)
         }
+    }
+
+    private func configureCircleView() {
+        formView.addSubview(circleView)
+        circleView.top(4).height(Constants.circleHeight).aspectRatio().centerX()
+    }
+
+    private func configureIconImageView() {
+        circleView.addSubview(iconImageView)
+        iconImageView.centerY().centerX().height(Constants.iconHeight).aspectRatio()
     }
 
     private func configureExitButton() {
@@ -112,7 +139,7 @@ final class FormUserViewController: ParentViewController {
 
         formView.addSubview(tableView)
         tableView.left(20).right(20).bottom()
-        tableView.topAnchor ~ exitButton.bottomAnchor + 8
+        tableView.topAnchor ~ exitButton.bottomAnchor + 10
         tableView.bottomAnchor ~ actionButton.topAnchor
     }
 

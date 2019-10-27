@@ -15,6 +15,7 @@ enum AlertState: Int {
 
 final class AlertView: UIView {
 
+    var actionHandler: VoidCallback?
     var animationHandler: Callback<AlertState>?
 
     private let imageView = UIImageView().thenUI {
@@ -55,7 +56,9 @@ final class AlertView: UIView {
         imageView.pin()
     }
 
-    func configure(title: String, description: String, titleAction: String) {
+    func configure(title: String,
+                   description: String,
+                   titleAction: String = Localized.Alert.titleActionOk) {
         titleLabel.text = title
         desriptionLabel.text = description
         actionButton.setTitle(titleAction, for: .normal)
@@ -72,13 +75,11 @@ final class AlertView: UIView {
 
     private func configureTitleLabel() {
         addSubview(titleLabel)
-        titleLabel.text = "Ошибка"
         titleLabel.left(32).top(25).right(16).height(26)
     }
 
     private func configureDesriptionLabel() {
         addSubview(desriptionLabel)
-        desriptionLabel.text = "Для продолжения пожалуйста заполните все поля для того что бы добавить нового пользователя"
         desriptionLabel.height(80)
         desriptionLabel.topAnchor ~ titleLabel.bottomAnchor + 5
         desriptionLabel.leadingAnchor ~ titleLabel.leadingAnchor
@@ -89,10 +90,11 @@ final class AlertView: UIView {
         addSubview(actionButton)
         actionButton.bottom(10).right(30).width(100)
         actionButton.topAnchor ~ desriptionLabel.bottomAnchor
-        actionButton.setTitle("Хорошо", for: .normal)
 
         actionButton.addAction(for: .touchUpInside) { [weak self] _ in
+            self?.actionButton.pulsate()
             self?.setAnimationAlert(state: .close)
+            self?.actionHandler?()
         }
     }
 
