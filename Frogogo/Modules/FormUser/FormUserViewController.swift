@@ -13,6 +13,8 @@ final class FormUserViewController: ParentViewController {
     private enum Constants {
         static let formRoundTop: CGFloat = 40
         static let cellHeight: CGFloat = 70
+        static let alertHeight: CGFloat = 186
+        static let alertWidth: CGFloat = 305
     }
 
     private let modalTransition = ModalTransitionDelegate()
@@ -46,6 +48,13 @@ final class FormUserViewController: ParentViewController {
         $0.isScrollEnabled = false
     }
 
+    private let visualEffectView = UIVisualEffectView().thenUI {
+        $0.alpha = 0
+        $0.effect = UIBlurEffect(style: .dark)
+    }
+
+    private let alertView = AlertView().prepareForAutoLayout()
+
     var viewModel: FormUserViewModelProtocol
 
     init(viewModel: FormUserViewModelProtocol) {
@@ -65,17 +74,25 @@ final class FormUserViewController: ParentViewController {
         configureActionButton()
         configureTableView()
         completionHandlers()
+        configureVisualEffectView()
     }
 
     private func completionHandlers() {
         viewModel.completionHandler = { [weak self] in
-            self?.actionButton.isEnabled = $0
+            switch $0 {
+            case .incorrectEmail:
+                self?.setAlert(title: Localized.Alert.titleError,
+                               description: Localized.FormUser.errorEmail)
+            case .emptyFields:
+                self?.setAlert(title: Localized.Alert.titleError,
+                               description: Localized.FormUser.errorEmptyFields)
+            }
         }
     }
 
     private func configureFormView() {
         view.addSubview(formView)
-        formView.hideKeyboard()
+        formView.hideKeyboardWhenTappedAround()
         formView.withoutSafeArea {
             $0.left().right().bottom().height(410)
         }
@@ -114,6 +131,27 @@ final class FormUserViewController: ParentViewController {
         modalPresentationStyle = .custom
         modalTransitionStyle = .crossDissolve
         transitioningDelegate = modalTransition
+    }
+
+    private func configureVisualEffectView() {
+        view.addSubview(visualEffectView)
+        visualEffectView.hideKeyboardWhenTappedAround()
+        visualEffectView.withoutSafeArea { $0.pin() }
+    }
+
+    private func setAlert(title: String, description: String) {
+        view.addSubview(alertView)
+        alertView.width(Constants.alertWidth).height(Constants.alertHeight)
+        alertView.centerYAnchor ~ formView.centerYAnchor - 50
+        alertView.centerXAnchor ~ formView.centerXAnchor
+        alertView.configure(title: title,
+                            description: description,
+                            titleAction: Localized.Alert.titleActionOk)
+        alertView.animationHandler = { [weak self] in
+            self?.visualEffectView.alpha = CGFloat($0.rawValue)
+        }
+
+        alertView.setAnimationAlert(state: .show)
     }
 }
 

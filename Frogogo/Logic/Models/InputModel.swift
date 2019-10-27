@@ -33,7 +33,7 @@ final class InputModel: InputModelProtocol {
     init(
         placeholderText: String? = nil,
         onChange: FormCallback<InputType?, String?>? = nil,
-        returnKey: UIReturnKeyType = .default,
+        returnKey: UIReturnKeyType = .done,
         keyboardType: UIKeyboardType = .default,
         formType: InputType? = nil,
         text: String? = nil
@@ -68,7 +68,6 @@ final class InputModel: InputModelProtocol {
     static func urlAvatar(onChange: FormCallback<InputType?, String?>? = nil) -> InputModel {
         return InputModel(placeholderText: Localized.FormUser.Input.urlAvatar,
                           onChange: onChange,
-                          returnKey: .done,
                           formType: .usrlAvatar)
     }
 }

@@ -12,7 +12,18 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
+  internal enum Alert {
+    /// Хорошо
+    internal static let titleActionOk = L10n.tr("Localizable", "alert.title_Action_Ok")
+    /// Ошибка
+    internal static let titleError = L10n.tr("Localizable", "alert.title_Error")
+  }
+
   internal enum FormUser {
+    /// Для того что-бы продолжить введите корректную почту :(
+    internal static let errorEmail = L10n.tr("Localizable", "formUser.error_email")
+    /// Для того что-бы продолжить, заполните пожалуйста все поля :(
+    internal static let errorEmptyFields = L10n.tr("Localizable", "formUser.error_emptyFields")
     internal enum Input {
       /// Почта
       internal static let email = L10n.tr("Localizable", "formUser.input.email")

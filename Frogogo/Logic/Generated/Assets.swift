@@ -36,6 +36,7 @@ internal enum Asset {
   internal static let add = ImageAsset(name: "add")
   internal static let exit = ImageAsset(name: "exit")
   internal static let header = ImageAsset(name: "header")
+  internal static let alertBackground = ImageAsset(name: "alertBackground")
   internal static let logo = ImageAsset(name: "logo")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

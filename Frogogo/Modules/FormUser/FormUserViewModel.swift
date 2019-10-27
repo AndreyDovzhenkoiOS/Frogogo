@@ -10,13 +10,13 @@ import Foundation
 
 protocol FormUserViewModelProtocol {
     var items: [InputModel] { get set }
-    var completionHandler: Callback<Bool>? { get set }
+    var completionHandler: Callback<ErrorValidation>? { get set }
 
     func addedNewUser()
 }
 
 final class FormUserViewModel: FormUserViewModelProtocol {
-    var completionHandler: Callback<Bool>?
+    var completionHandler: Callback<ErrorValidation>?
 
     private let form = FormModel()
     private let validationManager = ValidationManager()
@@ -24,7 +24,7 @@ final class FormUserViewModel: FormUserViewModelProtocol {
     lazy var items: [InputModel] = {
         let onChangeInput: ((InputType?, String?) -> Void) = { [weak form, weak self] type, text in
             form?.fillEvidence(type: type, text: text ?? "")
-            self?.completionHandler?(form?.isFillAllFields == true)
+
         }
 
         var items: [InputModel] = [
@@ -46,9 +46,9 @@ final class FormUserViewModel: FormUserViewModelProtocol {
             try validationManager.supportValidationAddNewUser(form: form)
             saveNewUser()
         } catch ErrorValidation.incorrectEmail {
-             print("incorrectEmail")
+            completionHandler?(.incorrectEmail)
         } catch {
-            print("emptyFields")
+            completionHandler?(.emptyFields)
         }
     }
 

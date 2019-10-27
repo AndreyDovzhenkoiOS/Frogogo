@@ -151,6 +151,10 @@ extension FormTableViewCell: UITextFieldDelegate {
         }
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        endEditing(true)
+    }
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
     }

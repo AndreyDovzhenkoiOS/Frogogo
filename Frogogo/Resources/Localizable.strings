@@ -6,6 +6,9 @@
 //  Copyright © 2019 Andrey Dovzhenko. All rights reserved.
 //
 
+"alert.title_Action_Ok" = "Хорошо";
+"alert.title_Error" = "Ошибка";
+
 "listUsers.title" = "Пользователи";
 
 "formUser.title.add" = "Добавить";
@@ -16,4 +19,5 @@
 "formUser.input.urlAvatar" = "Аватар url";
 "formUser.validation.error_email" = "Некоректный адрес почты";
 "formUser.validation.error_url" = "Некоректный адрес url";
-
+"formUser.error_emptyFields" = "Для того что-бы продолжить, заполните пожалуйста все поля :(";
+"formUser.error_email" = "Для того что-бы продолжить введите корректную почту :(";

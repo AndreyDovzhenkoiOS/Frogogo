@@ -51,7 +51,7 @@ extension UIView {
         addGestureRecognizer(keyboardRemovalRecognizer)
     }
 
-    @objc func hideKeyboard() {
+    @objc private func hideKeyboard() {
         endEditing(true)
     }
 }
