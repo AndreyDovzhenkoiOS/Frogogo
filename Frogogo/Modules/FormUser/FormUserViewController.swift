@@ -75,6 +75,7 @@ final class FormUserViewController: ParentViewController {
 
     private func configureFormView() {
         view.addSubview(formView)
+        formView.hideKeyboard()
         formView.withoutSafeArea {
             $0.left().right().bottom().height(410)
         }
@@ -104,6 +105,7 @@ final class FormUserViewController: ParentViewController {
         actionButton.setTitle(Localized.FormUser.Title.add, for: .normal)
 
         actionButton.addAction(for: .touchUpInside) { [weak self] _ in
+            self?.actionButton.pulsate()
             self?.viewModel.addedNewUser()
         }
     }

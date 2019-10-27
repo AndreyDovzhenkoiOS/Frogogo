@@ -44,4 +44,14 @@ extension UIView {
                           animations: completion,
                           completion: nil)
     }
+
+    func hideKeyboardWhenTappedAround() {
+        let keyboardRemovalRecognizer = UITapGestureRecognizer(target: self,
+                                                               action: #selector(hideKeyboard))
+        addGestureRecognizer(keyboardRemovalRecognizer)
+    }
+
+    @objc func hideKeyboard() {
+        endEditing(true)
+    }
 }

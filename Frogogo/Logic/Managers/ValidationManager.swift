@@ -8,7 +8,25 @@
 
 import Foundation
 
+enum ErrorValidation: Error {
+    case emptyFields
+    case incorrectEmail
+}
+
 struct ValidationManager {
+
+    func supportValidationAddNewUser(form: FormModel) throws {
+
+        let emailValidation = performValidation(text: form.email, type: .email)
+
+        guard form.isFillAllFields else {
+            throw ErrorValidation.emptyFields
+        }
+
+        guard emailValidation.isValid else {
+            throw ErrorValidation.incorrectEmail
+        }
+    }
 
     func performValidation(text: String?, type: InputType) -> (error: String?, isValid: Bool) {
          switch type {

@@ -19,6 +19,7 @@ final class FormUserViewModel: FormUserViewModelProtocol {
     var completionHandler: Callback<Bool>?
 
     private let form = FormModel()
+    private let validationManager = ValidationManager()
 
     lazy var items: [InputModel] = {
         let onChangeInput: ((InputType?, String?) -> Void) = { [weak form, weak self] type, text in
@@ -35,8 +36,23 @@ final class FormUserViewModel: FormUserViewModelProtocol {
 
         return items
     }()
-    
+
     func addedNewUser() {
+        execute()
+    }
+
+    private func execute() {
+        do {
+            try validationManager.supportValidationAddNewUser(form: form)
+            saveNewUser()
+        } catch ErrorValidation.incorrectEmail {
+             print("incorrectEmail")
+        } catch {
+            print("emptyFields")
+        }
+    }
+
+    private func saveNewUser() {
 
     }
 }
