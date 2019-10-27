@@ -7,6 +7,5 @@ target 'Frogogo' do
 
   pod 'SwiftLint'
   pod 'SwiftGen'
-  pod 'ParticlePullToRefresh'
 
 end

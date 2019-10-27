@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ParticlePullToRefresh
 
 final class ListUsersViewController: ParentViewController {
 

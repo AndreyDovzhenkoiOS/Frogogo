@@ -2,7 +2,7 @@
 //  CircleButton.swift
 //  Frogogo
 //
-//  Created by Andrey on 10/26/19.
+//  Created by Andrey Dovzhenko on 10/26/19.
 //  Copyright © 2019 Andrey Dovzhenko. All rights reserved.
 //
 

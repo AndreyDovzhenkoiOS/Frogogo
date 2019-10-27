@@ -8,5 +8,9 @@
 
 import Foundation
 
-final class ListUsersViewModel {
+protocol ListUsersViewModelProtocol {
+
+}
+
+final class ListUsersViewModel: ListUsersViewModelProtocol {
 }
