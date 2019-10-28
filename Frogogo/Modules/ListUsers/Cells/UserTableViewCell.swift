@@ -14,12 +14,14 @@ final class UserTableViewCell: UITableViewCell {
     private let circleView = UIView().thenUI {
         $0.backgroundColor = .clear
         $0.layer.borderColor = Asset.lightGreen.color.cgColor
-        $0.layer.borderWidth = 2
+        $0.layer.borderWidth = 3
         $0.layer.cornerRadius = 25
     }
 
     private let iconImageView = UIImageView().thenUI {
         $0.contentMode = .scaleAspectFill
+        $0.layer.cornerRadius = 25
+        $0.clipsToBounds = true
     }
 
     private let nameLabel = UILabel().thenUI {
@@ -63,6 +65,7 @@ final class UserTableViewCell: UITableViewCell {
         nameLabel.text = Localized.ListUsers.name(user.fullName)
         emailLabel.text = Localized.ListUsers.email(user.email)
         dateLabel.text = Localized.ListUsers.date(user.createdAt)
+
         if let url = user.avatar, !url.isEmpty {
             iconImageView.kf.setImage(with: URL(string: url))
         } else {
@@ -77,7 +80,7 @@ final class UserTableViewCell: UITableViewCell {
 
     private func configureIconImageView() {
         circleView.addSubview(iconImageView)
-        iconImageView.centerY().centerX().height(40).aspectRatio()
+        iconImageView.pin()
     }
 
     private func configureLineView() {

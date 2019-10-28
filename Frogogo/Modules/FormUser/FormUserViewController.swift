@@ -17,7 +17,6 @@ final class FormUserViewController: ParentViewController {
         static let alertHeight: CGFloat = 186
         static let alertWidth: CGFloat = 305
         static let circleHeight: CGFloat = 62
-        static let iconHeight: CGFloat = 50
     }
 
     private let modalTransition = ModalTransitionDelegate()
@@ -30,13 +29,15 @@ final class FormUserViewController: ParentViewController {
     private let circleView = UIView().thenUI {
         $0.backgroundColor = .clear
         $0.layer.borderColor = Asset.lightGreen.color.cgColor
-        $0.layer.borderWidth = 2
+        $0.layer.borderWidth = 3
         $0.layer.cornerRadius = 25
     }
 
     private let iconImageView = UIImageView().thenUI {
         $0.contentMode = .scaleAspectFit
         $0.image = Asset.emptyIcon4.image
+        $0.layer.cornerRadius = 25
+        $0.clipsToBounds = true
     }
 
     private let exitButton = CircleButton(color: Asset.darkGreen.color).thenUI {
@@ -144,7 +145,7 @@ final class FormUserViewController: ParentViewController {
 
     private func configureIconImageView() {
         circleView.addSubview(iconImageView)
-        iconImageView.centerY().centerX().height(Constants.iconHeight).aspectRatio()
+        iconImageView.pin()
     }
 
     private func configureExitButton() {
