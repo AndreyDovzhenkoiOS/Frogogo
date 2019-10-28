@@ -38,8 +38,19 @@ final class AvatarView: UIView {
         if let url = urlString, !url.isEmpty {
             iconImageView.kf.setImage(with: URL(string: url))
         } else {
-            iconImageView.image = Asset.emptyIcon4.image
+            iconImageView.image = emptyImage
         }
+    }
+
+    private var emptyImage: UIImage? {
+        return [
+            Asset.emptyIcon1.image,
+            Asset.emptyIcon2.image,
+            Asset.emptyIcon3.image,
+            Asset.emptyIcon4.image,
+            Asset.emptyIcon5.image,
+            Asset.emptyIcon6.image
+            ].randomElement()
     }
 
     private func configureCircleView() {
