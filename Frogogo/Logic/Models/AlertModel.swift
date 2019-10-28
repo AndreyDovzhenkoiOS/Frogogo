@@ -38,14 +38,14 @@ struct AlertModel {
     static var successAdd: AlertModel {
         return AlertModel(title: Localized.Alert.titleSuccess,
                           description: Localized.FormUser.successAdd,
-                          titleAction: Localized.Alert.titleSuccess,
+                          titleAction: Localized.Alert.titleActionOk,
                           isError: false)
     }
 
     static var successEdit: AlertModel {
         return AlertModel(title: Localized.Alert.titleSuccess,
                           description: Localized.FormUser.successEdit,
-                          titleAction: Localized.Alert.titleSuccess,
+                          titleAction: Localized.Alert.titleActionOk,
                           isError: false)
     }
 }
