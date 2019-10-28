@@ -154,8 +154,8 @@ final class FormUserViewController: ParentViewController {
         formView.addSubview(actionButton)
         actionButton.left(16).right(16).bottom(10).height(50)
         let title = viewModel.user != nil ?
-            Localized.FormUser.Title.add :
-            Localized.FormUser.Title.edit
+            Localized.FormUser.Title.edit :
+            Localized.FormUser.Title.add
         actionButton.setTitle(title, for: .normal)
 
         actionButton.addAction(for: .touchUpInside) { [weak self] _ in
