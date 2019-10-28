@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum StatusCode: Int {
+    case error = 422
+}
+
 enum RequestError: Error {
     case badRequest
 }
@@ -68,7 +72,7 @@ final class RequestProvider: RequestProviderProtocol {
 
     private func createDataTask(from request: URLRequest,
                                 completion: @escaping RequestResultProvider) -> URLSessionDataTask {
-         return URLSession.shared.dataTask(with: request) { data, _, error in
+         return URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(.failure(error))
@@ -77,6 +81,11 @@ final class RequestProvider: RequestProviderProtocol {
                 guard let data = data else {
                     completion(.failure(RequestError.badRequest))
                     return
+                }
+
+                if let httpResponse = response as? HTTPURLResponse,
+                    httpResponse.statusCode == StatusCode.error.rawValue {
+                    print(Localized.Error.server)
                 }
 
                 completion(.success(data))
