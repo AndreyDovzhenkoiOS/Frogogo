@@ -153,7 +153,10 @@ final class FormUserViewController: ParentViewController {
     private func configureActionButton() {
         formView.addSubview(actionButton)
         actionButton.left(16).right(16).bottom(10).height(50)
-        actionButton.setTitle(Localized.FormUser.Title.add, for: .normal)
+        let title = viewModel.user != nil ?
+            Localized.FormUser.Title.add :
+            Localized.FormUser.Title.edit
+        actionButton.setTitle(title, for: .normal)
 
         actionButton.addAction(for: .touchUpInside) { [weak self] _ in
             self?.actionButton.pulsate()
