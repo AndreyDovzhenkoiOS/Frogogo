@@ -7,21 +7,12 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class UserTableViewCell: UITableViewCell {
 
-    private let circleView = UIView().thenUI {
+    private let avatarView = AvatarView().thenUI {
         $0.backgroundColor = .clear
-        $0.layer.borderColor = Asset.lightGreen.color.cgColor
-        $0.layer.borderWidth = 3
-        $0.layer.cornerRadius = 25
-    }
-
-    private let iconImageView = UIImageView().thenUI {
-        $0.contentMode = .scaleAspectFill
-        $0.layer.cornerRadius = 25
-        $0.clipsToBounds = true
+        $0.isUserInteractionEnabled = false
     }
 
     private let nameLabel = UILabel().thenUI {
@@ -49,8 +40,7 @@ final class UserTableViewCell: UITableViewCell {
         selectionStyle = .none
         backgroundColor = .clear
         configureLineView()
-        configureCircleView()
-        configureIconImageView()
+        configureAvatarView()
         configureNameLabel()
         configureEmailLabel()
         configureDateLabel()
@@ -65,25 +55,15 @@ final class UserTableViewCell: UITableViewCell {
         nameLabel.text = Localized.ListUsers.name(user.fullName)
         emailLabel.text = Localized.ListUsers.email(user.email)
         dateLabel.text = Localized.ListUsers.date(user.createdAt)
-
-        if let url = user.avatar, !url.isEmpty {
-            iconImageView.kf.setImage(with: URL(string: url))
-        } else {
-            iconImageView.image = Asset.emptyIcon4.image
-        }
+        avatarView.setImage(with: user.avatar)
     }
 
-    private func configureCircleView() {
-        addSubview(circleView)
-        circleView.left(16).top(8).height(52).aspectRatio()
+    private func configureAvatarView() {
+        addSubview(avatarView)
+        avatarView.left(5).top(8).height(52).aspectRatio()
     }
 
-    private func configureIconImageView() {
-        circleView.addSubview(iconImageView)
-        iconImageView.pin()
-    }
-
-    private func configureLineView() {
+    func configureLineView() {
         addSubview(lineView)
         lineView.height(1).left(18).right().bottom()
     }
@@ -91,7 +71,7 @@ final class UserTableViewCell: UITableViewCell {
     private func configureNameLabel() {
         addSubview(nameLabel)
         nameLabel.right(16).top(10).height(20)
-        nameLabel.leadingAnchor ~ iconImageView.trailingAnchor + 25
+        nameLabel.leadingAnchor ~ avatarView.trailingAnchor + 25
     }
 
     private func configureEmailLabel() {

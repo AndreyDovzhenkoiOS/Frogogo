@@ -26,18 +26,9 @@ final class FormUserViewController: ParentViewController {
         $0.roundTop(radius: Constants.formRoundTop)
     }
 
-    private let circleView = UIView().thenUI {
+    private let avatarView = AvatarView().thenUI {
         $0.backgroundColor = .clear
-        $0.layer.borderColor = Asset.lightGreen.color.cgColor
-        $0.layer.borderWidth = 3
-        $0.layer.cornerRadius = 25
-    }
-
-    private let iconImageView = UIImageView().thenUI {
-        $0.contentMode = .scaleAspectFit
-        $0.image = Asset.emptyIcon4.image
-        $0.layer.cornerRadius = 25
-        $0.clipsToBounds = true
+        $0.isUserInteractionEnabled = false
     }
 
     private let exitButton = CircleButton(color: Asset.darkGreen.color).thenUI {
@@ -92,8 +83,7 @@ final class FormUserViewController: ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFormView()
-        configureCircleView()
-        configureIconImageView()
+        configureAvatarView()
         configureExitButton()
         configureActionButton()
         configureTableView()
@@ -138,14 +128,9 @@ final class FormUserViewController: ParentViewController {
         }
     }
 
-    private func configureCircleView() {
-        formView.addSubview(circleView)
-        circleView.top(4).height(Constants.circleHeight).aspectRatio().centerX()
-    }
-
-    private func configureIconImageView() {
-        circleView.addSubview(iconImageView)
-        iconImageView.pin()
+    private func configureAvatarView() {
+        formView.addSubview(avatarView)
+        avatarView.top(4).height(Constants.circleHeight).aspectRatio().centerX()
     }
 
     private func configureExitButton() {
@@ -231,16 +216,10 @@ final class FormUserViewController: ParentViewController {
 
     private func setIconImageView() {
         guard let user = viewModel.user else {
-            iconImageView.isHidden = true
-            circleView.isHidden = true
+            avatarView.isHidden = true
             return
         }
-
-        if let url = user.avatar, !url.isEmpty {
-            iconImageView.kf.setImage(with: URL(string: url))
-        } else {
-            iconImageView.image = Asset.emptyIcon4.image
-        }
+        avatarView.setImage(with: user.avatar)
     }
 }
 

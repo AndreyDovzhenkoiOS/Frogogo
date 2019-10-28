@@ -24,6 +24,7 @@
 		8A1F9D132366303A00DBF768 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F9D122366303A00DBF768 /* AlertModel.swift */; };
 		8A1F9D162366376400DBF768 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F9D152366376400DBF768 /* ViewControllerAssembly.swift */; };
 		8A1F9D182366535F00DBF768 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F9D172366535F00DBF768 /* UIDevice.swift */; };
+		8A3291012366D1C8008D8F9E /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3291002366D1C8008D8F9E /* AvatarView.swift */; };
 		8A519F9D2364ED8500220264 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A519F9C2364ED8500220264 /* InputTextField.swift */; };
 		8A519F9F2364F91F00220264 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A519F9E2364F91F00220264 /* Optional.swift */; };
 		8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5EDB2B2363751300381528 /* ParentViewController.swift */; };
@@ -78,6 +79,7 @@
 		8A1F9D122366303A00DBF768 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		8A1F9D152366376400DBF768 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
 		8A1F9D172366535F00DBF768 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		8A3291002366D1C8008D8F9E /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		8A519F9C2364ED8500220264 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		8A519F9E2364F91F00220264 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		8A5EDB2B2363751300381528 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				8AF896BC23646DCD00AEFA21 /* CircleButton.swift */,
 				8A519F9C2364ED8500220264 /* InputTextField.swift */,
 				8A634DAE2365BEB8001D8082 /* AlertView.swift */,
+				8A3291002366D1C8008D8F9E /* AvatarView.swift */,
 				8A1F9D102366277D00DBF768 /* LoadingView.swift */,
 				8ADEE3B22365668700FDCAB3 /* ParticlePullToRefresh */,
 			);
@@ -544,6 +547,7 @@
 				8A1F9D112366277D00DBF768 /* LoadingView.swift in Sources */,
 				8A5EDB2C2363751300381528 /* ParentViewController.swift in Sources */,
 				8A1F9D182366535F00DBF768 /* UIDevice.swift in Sources */,
+				8A3291012366D1C8008D8F9E /* AvatarView.swift in Sources */,
 				8A1903B723631D6800CA9712 /* Then.swift in Sources */,
 				8ADEE3BD2365674F00FDCAB3 /* ParticlePullToRefresh.swift in Sources */,
 				8A634DB12365D93D001D8082 /* Users.swift in Sources */,
